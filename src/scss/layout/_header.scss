@@ -1,0 +1,72 @@
+.header {
+  &:not(.has-search) {
+    .header-block {
+      border-radius: 0.4rem;
+      background-color: $colors-primary;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: relative;
+
+    z-index: 99;
+
+    font-family: "Theano Didot";
+
+    &-logo {
+      position: absolute;
+      border-top: 1px solid $colors-secondary;
+      left: 2.3rem;
+      top: 0;
+      transform: translateY(-22%);
+      width: 8.6rem;
+
+      &-column {
+        position: relative;
+        padding-left: 8.6rem;
+        margin-right: 4.3rem;
+      }
+    }
+
+    &-block {
+      .navbar-brand {
+        position: relative;
+        display: inline-block;
+        background-color: $colors-secondary;
+        padding: 1rem;
+        margin-right: 0;
+
+        &:before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 (8.6rem / 2) 1rem 0;
+          border-color: transparent $colors-secondary transparent transparent;
+          transform: translateY(100%);
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 1rem (8.6rem / 2) 0 0;
+          border-color: $colors-secondary transparent transparent transparent;
+          transform: translateY(100%);
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

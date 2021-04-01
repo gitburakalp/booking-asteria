@@ -1,0 +1,132 @@
+.search-steps {
+  padding-bottom: 6rem;
+
+  @include media-breakpoint-up(1280) {
+    &__guests {
+      max-width: 70.3rem;
+    }
+
+    &__payment {
+      max-width: 73.2rem;
+    }
+  }
+
+  @include media-breakpoint-up(1440) {
+    &__transfers {
+      max-width: 94.9rem;
+    }
+  }
+
+  &__title-block {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+
+    .title--lg {
+      font-size: 2.4rem;
+      font-family: $ff-Didot;
+      font-weight: 700;
+      color: $colors-black;
+    }
+  }
+
+  &__results {
+    display: flex;
+    flex-wrap: wrap;
+    // min-width: fluidAmount(950, 1600, vw);
+    // width: fluidAmount(950, 1600, vw);
+
+    > * {
+      position: relative;
+      min-height: 1px;
+      width: 100%;
+      max-width: 100%;
+
+      $gap: fluidAmount(40, 1600, vw);
+
+      @include media-breakpoint-between(sm, md) {
+        &:not(:nth-child(2n + 1)) {
+          margin-left: auto;
+        }
+
+        &:nth-child(n + 3) {
+          margin-top: $gap;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        $mw: calc((100% - (#{$gap})) / 2);
+        flex: 0 0 $mw;
+        max-width: $mw;
+      }
+
+      @include media-breakpoint-up(lg) {
+        $mw: calc((100% - (#{$gap} * 2)) / 3);
+        flex: 0 0 $mw;
+        max-width: $mw;
+
+        &:not(:nth-child(3n + 1)) {
+          margin-left: auto;
+        }
+
+        &:nth-child(n + 4) {
+          margin-top: $gap;
+        }
+      }
+    }
+  }
+
+  &__transfers {
+    position: relative;
+  }
+
+  &__payment {
+    .radio-lists-wrapper {
+      .custom-check {
+        display: inline-block;
+        padding-left: 1.4rem;
+        padding-right: 2rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        border: 1px solid;
+        border-radius: 0.4rem;
+        transition: border-color $duration, background-color $duration * 3;
+        border-color: $colors-border-color-light;
+        background-color: $white;
+
+        &.is-active {
+          border-color: $colors-secondary-light;
+          background-color: $colors-secondary-light;
+        }
+      }
+
+      .bordered-box {
+        border-radius: 0.4rem;
+        padding: 1.3rem;
+
+        p {
+          color: $colors-warm-grey;
+
+          span {
+            color: $colors-black;
+          }
+        }
+      }
+    }
+  }
+
+  &__guests {
+    .form-row {
+      @include media-breakpoint-up(lg) {
+        > .col-xl-4 {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &__banner {
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: hidden;
+  }
+}

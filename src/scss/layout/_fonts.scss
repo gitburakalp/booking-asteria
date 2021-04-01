@@ -1,0 +1,20 @@
+@include font-face(Athelas, '../../fonts/Athelas/Athelas-Regular', 400, normal, eot woff ttf svg);
+@include font-face(Athelas, '../../fonts/Athelas/Athelas-Italic', 400, italic, eot woff ttf svg);
+
+@include font-face(
+  'Theano Didot',
+  '../../fonts/TheanoDidot/TheanoDidot-Regular',
+  400,
+  normal,
+  eot woff woff2 ttf svg
+);
+
+@include font-face(Didot, '../../fonts/Didot/Didot-Bold', bold, normal, eot woff woff2 ttf svg);
+@include font-face(
+  Didot,
+  '../../fonts/Didot/Didot-Regular',
+  normal,
+  normal,
+  eot woff woff2 ttf svg
+);
+@include font-face(Didot, '../../fonts/Didot/Didot-Italic', normal, italic, eot woff woff2 ttf svg);

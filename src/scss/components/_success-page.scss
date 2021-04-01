@@ -1,0 +1,172 @@
+.success-page {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  min-height: 100vh;
+
+  .brand--heart {
+    max-width: getAmountByViewport(30, 1440);
+
+    + * {
+      margin-top: getAmountByViewport(20, 1440);
+    }
+  }
+
+  .reservation-summary-block {
+    width: 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      $amount: fluidAmount(405, 1440, vw);
+      width: $amount;
+      max-width: $amount;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: getAmountByViewport(405, 1440);
+    }
+
+    .title {
+      font-family: $ff-Didot;
+      font-size: getAmountByViewport(19, 1440);
+      font-weight: 700;
+      line-height: 1.02;
+      color: $black;
+    }
+
+    .subtitle {
+      font-family: $ff-Didot;
+      font-size: getAmountByViewport(13.1, 1440);
+      font-weight: 700;
+      line-height: 1;
+      color: $black;
+    }
+
+    .amount {
+      display: block;
+      font-family: $ff-Didot;
+      font-size: getAmountByViewport(14.9, 1440);
+      font-weight: 700;
+      line-height: 1;
+      color: $colors-black;
+    }
+
+    .description {
+      font-size: getAmountByViewport(9.5, 1440);
+      font-weight: 400;
+
+      &--sm {
+        font-size: getAmountByViewport(8.7, 1440);
+      }
+    }
+
+    .bordered-box {
+      border-radius: getAmountByViewport(3, 1440);
+      padding: getAmountByViewport(4, 1440);
+
+      &--inner {
+        border-radius: getAmountByViewport(3, 1440);
+        padding: getAmountByViewport(4, 1440);
+        padding-right: getAmountByViewport(10, 1440);
+
+        > * {
+          + * {
+            margin-top: getAmountByViewport(2, 1440);
+          }
+        }
+
+        &.bg--light-pink {
+          border-color: $colors-secondary;
+        }
+      }
+
+      .form-row {
+        $amount: 2.5px;
+
+        margin-left: -$amount;
+        margin-right: -$amount;
+
+        > * {
+          padding-left: $amount;
+          padding-right: $amount;
+        }
+      }
+
+      .image-col {
+        @include media-breakpoint-up(lg) {
+          min-width: fluidAmount(157, 368, #{"%"});
+
+          + * {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .image {
+        position: relative;
+        overflow: hidden;
+        border-radius: getAmountByViewport(3, 1440);
+
+        padding-bottom: 139 / 152 * 100%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .transfers--from-to-block {
+      border-radius: getAmountByViewport(3, 1440);
+      padding: getAmountByViewport(6, 1440);
+
+      .transfers {
+        &-from,
+        &-to {
+          padding: getAmountByViewport(2.5, 1440);
+          font-size: getAmountByViewport(10.2, 1440);
+        }
+      }
+    }
+
+    .reservation-summary {
+      &-details {
+        padding-left: getAmountByViewport(12, 1440);
+        padding-right: getAmountByViewport(12, 1440);
+      }
+    }
+  }
+
+  .success {
+    &-slogan {
+      &-block {
+        max-width: fluidAmount(340, 1440, vw);
+
+        @include media-breakpoint-up(xl) {
+          max-width: getAmountByViewport(340, 1440);
+        }
+      }
+
+      font-family: $ff-Didot;
+      font-weight: 400;
+      font-size: getAmountByViewport(34, 1440);
+      font-style: italic;
+      line-height: 1.18;
+      color: $colors-greyish-brown-dark;
+
+      span {
+        color: $colors-danger;
+      }
+    }
+  }
+}

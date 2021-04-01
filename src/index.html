@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Asteria</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/jquery-daterangepicker/daterangepicker.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel2/owl.carousel.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel2/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="no-search">
+    <header class="header">
+      <div class="container">
+        <div class="header-block">
+          <div class="row align-items-lg-center">
+            <div class="col-lg-auto header-logo-column">
+              <div class="header-logo">
+                <a href="/" class="navbar-brand">
+                  <img
+                    src="http://cdn.zeplin.io/601a529e1d0b7321e6fcd84e/assets/6905C8B4-D3F5-473F-996C-88293B621106.png"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg">
+              <div class="row search-form-block">
+                <div class="col-4">
+                  <div class="select-box">
+                    <input
+                      id="inpDates"
+                      class="datepicker"
+                      placeholder="Checkin / Checkout"
+                      readonly
+                    />
+                    <input type="hidden" id="inpCheckinDate" />
+                    <input type="hidden" id="inpCheckoutDate" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="select-box">
+                    <input placeholder="Adults Children" readonly />
+                    <div class="custom-popover adults-child-popover">
+                      <div class="row no-gutters" data-max="8">
+                        <div class="col"><span id="adultCount">1</span> Adults</div>
+                        <div class="col-auto">
+                          <a class="plus">
+                            <svg viewBox="0 0 512 512" class="icon shape-codepen">
+                              <use xlink:href="images/svg/svg-icons.svg#plus-circle"></use>
+                            </svg>
+                          </a>
+                          <a class="minus">
+                            <svg viewBox="0 512 512 512" class="icon shape-codepen">
+                              <use xlink:href="images/svg/svg-icons.svg#minus-circle"></use>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="row no-gutters" data-max="3">
+                        <div class="col"><span id="childCount">0</span> Children</div>
+                        <div class="col-auto">
+                          <a class="plus">
+                            <svg viewBox="0 0 512 512" class="icon shape-codepen">
+                              <use xlink:href="images/svg/svg-icons.svg#plus-circle"></use>
+                            </svg>
+                          </a>
+                          <a class="minus">
+                            <svg viewBox="0 512 512 512" class="icon shape-codepen">
+                              <use xlink:href="images/svg/svg-icons.svg#minus-circle"></use>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="row no-gutters child-row d-none">
+                        <div class="col-4 child-1 d-none">
+                          <select class="form-control">
+                            <option value="">Yaş</option>
+                          </select>
+                        </div>
+                        <div class="col-4 child-2 d-none">
+                          <select class="form-control">
+                            <option value="">Yaş</option>
+                          </select>
+                        </div>
+                        <div class="col-4 child-3 d-none">
+                          <select class="form-control">
+                            <option value="">Yaş</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="select-box">
+                    <input placeholder="Flight Selection" readonly />
+                    <div class="custom-popover flight-popover">
+                      <div class="form-row text-center">
+                        <div class="col-12">
+                          <h2 class="title--lg">Flight Selection</h2>
+                          <hr />
+                          <p class="description">
+                            The flight options that best suit your accommodation preferences are now
+                            a click away.
+                          </p>
+                          <p class="description--md">Experience now!</p>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12 col-md-6">
+                          <h4 class="description mb-3">Specify where you want to come from.</h4>
+                          <select class="form-control">
+                            <option>Select an option</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <h4 class="description mb-3">Specify where you want to go.</h4>
+                          <select class="form-control">
+                            <option>Select an option</option>
+                          </select>
+                        </div>
+                        <div class="col-12 mt-4">
+                          <h4 class="description mb-3">Flight classes</h4>
+                          <select class="form-control">
+                            <option>Economy</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12">
+                          <div class="custom-checkbox">
+                            <input id="inpDifferentDate" type="checkbox" />
+                            <label for="inpDifferentDate"
+                              >My arrival or departure flight dates are different from my arrival
+                              dates.</label
+                            >
+                          </div>
+
+                          <hr />
+                        </div>
+                      </div>
+                      <div class="form-row text-center">
+                        <div class="col-12">
+                          <h2 class="title">Departure Flight</h2>
+                          <h5 class="title--2xs">From</h5>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12 col-md-4">
+                          <select class="form-control">
+                            <option>Select on option</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <select class="form-control">
+                            <option>Bodrum Milas (BJV)</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input
+                            class="form-control datepicker is-singlepicker"
+                            placeholder="01.01.2021"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12">
+                          <div class="custom-checkbox">
+                            <input id="inpDepartureDontWant" type="checkbox" />
+                            <label for="inpDepartureDontWant">I don't want</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row text-center">
+                        <div class="col-12">
+                          <h2 class="title">Arrival Flight</h2>
+                          <h5 class="title--2xs">From</h5>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12 col-md-4">
+                          <select class="form-control">
+                            <option>Bodrum Milas (BJV)</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <select class="form-control">
+                            <option>Select on option</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <input
+                            class="form-control datepicker is-singlepicker"
+                            placeholder="01.01.2021"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12">
+                          <div class="custom-checkbox">
+                            <input id="inpArrivalDontWant" type="checkbox" />
+                            <label for="inpArrivalDontWant">I don't want</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-12 col-md-6">
+                          <a href="#" class="btn btn--transparent-bordered d-block">
+                            Continue Without Flight
+                          </a>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <a href="#" class="btn btn-primary d-block"> Continue </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-auto ml-auto">
+              <a href="/search-result.html" class="btn btn--continue btn-primary btn--book-now">
+                BOOK NOW <i class="icons icons--arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main"></main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-block">
+          <div class="row align-items-lg-center">
+            <div class="col-lg">
+              <p class="copyright-text ml-lg-4">
+                © 2021 Selectum Hotels & Resort / Tüm hakları saklıdır.
+              </p>
+            </div>
+            <div class="col-lg-auto ml-auto text-right">
+              <p class="footer-description">
+                Rezervasyonunuzu<br />
+                bizi arayarak yapabilirsiniz.
+              </p>
+            </div>
+            <div class="col-lg-auto">
+              <a href="tel:+902427224200" class="btn btn-primary">
+                <i class="icons icons--phone"></i>
+                +90 (242) 722 42 00
+              </a>
+            </div>
+            <div class="col-lg-auto">
+              <div class="language-btn">
+                TR
+
+                <div class="language-list">
+                  <ul>
+                    <li>TR</li>
+                    <li>EN</li>
+                    <li>DE</li>
+                    <li>RU</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="http://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="lib/jquery-daterangepicker/jquery.daterangepicker.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>

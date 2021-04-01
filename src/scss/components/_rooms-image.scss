@@ -1,0 +1,44 @@
+.rooms-image-block {
+  position: relative;
+
+  + * {
+    margin-top: -0.5rem;
+  }
+
+  .image {
+    position: relative;
+    border-radius: 0.4rem;
+    overflow: hidden;
+  }
+
+  &.owl-carousel {
+    padding-bottom: 2rem;
+
+    .owl-dots {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+
+      > * {
+        position: relative;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: rgba($colors-brownish-grey, 0.5);
+        transition: background-color $duration;
+
+        &.active {
+          background-color: $colors-brownish-grey;
+        }
+
+        + * {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}

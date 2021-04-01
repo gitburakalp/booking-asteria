@@ -1,0 +1,47 @@
+.search-form-block {
+  $spacing: 4.5rem;
+
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+
+  > [class*="col"] {
+    padding-left: $spacing;
+    padding-right: $spacing;
+
+    &:not(:last-child) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateX(1rem);
+        width: 4rem;
+        height: 1px;
+        background-color: rgba($colors-secondary, 0.5);
+      }
+
+      &.is-selected {
+        &::after {
+          content: "";
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%2330a5c9f'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+          background-color: $colors-secondary;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -1rem;
+        transform: translate(100%, -50%);
+        width: 1.4rem;
+        height: 1.4rem;
+        border: 1px solid rgba($colors-secondary, 0.5);
+        border-radius: 50%;
+      }
+    }
+  }
+}

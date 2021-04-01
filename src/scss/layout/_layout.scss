@@ -1,0 +1,142 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%; // 1rem 10px denk geliyor.
+  min-height: -webkit-fill-available;
+}
+
+body {
+  font-family: $ff-TheanoDidot;
+  font-weight: 400;
+  font-size: 1.6rem;
+  min-height: 100vh;
+
+  &.no-search {
+    background-image: url('https://asteriahotels.com/images/hotels/bodrum-resort/asteria-hotels-asteria-bodrum-resort-537.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 100% 74%;
+  }
+
+  &:not(.is-loaded) {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      z-index: 999;
+    }
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  &:not(.has-search) {
+    .header {
+      padding-top: 2.3rem;
+    }
+
+    .header-block {
+      background-color: $colors-primary;
+      padding: 1rem 1rem 1rem 2.3rem;
+    }
+  }
+
+  &.has-search {
+    footer {
+      display: none;
+    }
+
+    .container {
+      @include media-breakpoint-up(md) {
+        max-width: 98vw;
+      }
+
+      @include media-breakpoint-up(1440) {
+        max-width: 137.1rem;
+      }
+    }
+
+    .header {
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      background-color: $colors-primary;
+    }
+  }
+}
+
+@for $i from 1 to 7 {
+  h#{$i} {
+    margin: 0;
+  }
+}
+
+figure,
+p,
+label {
+  margin-bottom: 0;
+}
+
+ul {
+  &:not(.standart-list) {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+    transition: color $duration ease-in;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+main {
+  position: relative;
+
+  @include media-breakpoint-up(xl) {
+    min-height: calc(100vh - (var(--fh) + var(--hh)));
+  }
+}
+
+hr {
+  &.border-dashed {
+    border-style: dashed;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.bg {
+  &--light-pink {
+    background-color: $colors-secondary-light !important;
+  }
+}
+
+.top-0 {
+  top: 0;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  height: 2rem;
+  width: 1px;
+  background-color: rgba(#979797, 0.5);
+}

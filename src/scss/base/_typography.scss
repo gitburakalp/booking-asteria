@@ -1,0 +1,95 @@
+%title {
+  font-family: $ff-TheanoDidot;
+  font-weight: 400;
+  line-height: 1;
+  color: $black;
+}
+
+.title {
+  @extend %title;
+  font-size: 2rem;
+
+  &.border-bottom-dashed {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba($colors-border-color, 0.125);
+  }
+
+  &--2xs {
+    @extend %title;
+    font-size: 1.2rem;
+  }
+
+  &--xs {
+    @extend %title;
+  }
+
+  &--sm {
+    @extend %title;
+
+    font-size: 1.4rem;
+  }
+
+  &--md {
+    @extend %title;
+    font-size: 1.6rem;
+  }
+
+  &--lg {
+    @extend %title;
+
+    font-size: 2.2rem;
+  }
+
+  &--xl {
+    @extend %title;
+
+    font-size: 2.4rem;
+  }
+
+  &--2xl {
+    @extend %title;
+
+    font-size: 2.6rem;
+  }
+}
+
+.description {
+  font-family: $ff-TheanoDidot;
+  font-size: 1.2rem;
+  line-height: 1.33;
+  color: $black;
+
+  &--md {
+    @extend .description;
+    font-size: 1.4rem;
+  }
+
+  &--lg {
+    @extend .description;
+    font-size: 1.6rem;
+  }
+}
+
+.font {
+  &-family {
+    &--athelas {
+      font-family: $ff-Athelas !important;
+    }
+
+    &--didot {
+      font-family: $ff-Didot !important;
+      font-weight: 700;
+    }
+  }
+}
+
+.text-color {
+  &--clay-brown {
+    color: $colors-secondary-dark !important;
+  }
+
+  &--brownish-grey {
+    color: $colors-brownish-grey !important;
+  }
+}

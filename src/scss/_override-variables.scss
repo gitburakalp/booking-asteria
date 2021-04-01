@@ -1,0 +1,31 @@
+$primary: $colors-secondary;
+$btn-font-size: 1.4rem;
+$input-border-color: $colors-border-color-light;
+$input-font-size: 1.6rem;
+$input-padding-y: 0.75rem;
+$input-padding-x: 0.8rem;
+$input-line-height: 1.47;
+$input-height: auto;
+$input-focus-border-color: $colors-border-color;
+$input-focus-box-shadow: none;
+$input-border-radius: 0.6rem;
+
+$xlContainerMaxW: 117.7rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  1280: 1280px,
+  1440: 1440px,
+  1600: 1600px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: $xlContainerMaxW,
+  xl: $xlContainerMaxW,
+) !default;

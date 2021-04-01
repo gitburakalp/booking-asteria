@@ -1,0 +1,26 @@
+{
+  "name": "bookingasteria",
+  "version": "1.0.0",
+  "description": "BookingAsteria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ANEX",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "grunt": "1.3.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "4.0.0",
+    "grunt-contrib-sass": "2.0.0",
+    "grunt-contrib-uglify": "5.0.0",
+    "grunt-contrib-watch": "1.1.0",
+    "sass": "1.32.8"
+  }
+}

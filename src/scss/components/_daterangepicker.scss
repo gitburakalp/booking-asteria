@@ -1,0 +1,202 @@
+.date-picker-wrapper {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+
+  font-family: $ff-TheanoDidot;
+  color: #323232;
+
+  .drp_top-bar {
+    display: none;
+  }
+
+  .footer {
+    position: relative;
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    background-color: $white;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #575757;
+    letter-spacing: -0.034rem;
+    font-weight: normal;
+
+    b {
+      font-weight: normal;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 2.3rem;
+      right: 2.3rem;
+      border-top: 1px solid $colors-dirty-white;
+    }
+  }
+
+  .date-range-length-tip {
+    background-color: $colors-secondary;
+    color: $white;
+
+    &::after {
+      border-color: $colors-secondary;
+    }
+  }
+
+  .month-wrapper {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    margin-top: 2.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 3rem;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 9rem;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-right-width: 1rem;
+      border-left-width: 1rem;
+      border-bottom: 1rem solid $white;
+      transform: translateY(-100%);
+    }
+
+    table[class*='month'] {
+      table-layout: fixed;
+      width: auto;
+
+      td,
+      th {
+        margin: 1rem;
+        min-width: 3.4rem;
+        font-weight: 400;
+      }
+
+      .day {
+        padding: 0;
+        margin: 0.5rem;
+        font-size: 1.26rem;
+        letter-spacing: -0.034rem;
+        line-height: 1.95;
+        border-radius: 50%;
+        min-width: 2.4rem;
+
+        &.real-today {
+          background-color: $colors-secondary;
+        }
+
+        &.lastMonth,
+        &.nextMonth {
+          // display: block !important;
+          opacity: 0.25;
+        }
+
+        &.checked,
+        &.hovering {
+          background-color: rgba($colors-secondary, 0.5) !important;
+          color: $white;
+        }
+
+        &.first-date-selected,
+        &.last-date-selected {
+          background-color: $colors-secondary !important;
+        }
+      }
+    }
+
+    .gap {
+      width: 1px;
+      background-color: transparent;
+      margin: 0 49px;
+      visibility: visible !important;
+      min-height: 22rem;
+      height: auto !important;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        background-color: $colors-dirty-white;
+        height: 13.6rem;
+        width: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .gap-lines {
+        display: none;
+      }
+    }
+  }
+
+  table {
+    position: relative;
+
+    .caption {
+      height: 4.2rem;
+
+      .prev,
+      .next {
+        position: absolute;
+        display: inline-block;
+        top: 1rem;
+        width: 5.9rem;
+        height: 2rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: opacity $duration;
+
+        &:hover {
+          background-color: transparent !important;
+          opacity: 0.5;
+        }
+      }
+
+      .prev {
+        background-image: url('../../images/svg/arrow-left.svg');
+        left: -2.3rem;
+      }
+
+      .next {
+        background-image: url('../../images/svg/arrow-right.svg');
+        right: -2.3rem;
+      }
+    }
+
+    .month-name {
+      text-transform: capitalize;
+      color: $colors-black;
+      font-size: 1.6rem;
+
+      .select-wrapper {
+        text-transform: capitalize;
+      }
+
+      select option {
+        text-transform: capitalize;
+      }
+    }
+
+    .week-name {
+      font-size: 1.1rem;
+      color: #8e8e8e;
+
+      th {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

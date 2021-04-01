@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Asteria</title>
+    <link rel="stylesheet" href="lib/jquery-daterangepicker/daterangepicker.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel2/owl.carousel.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel2/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="http://use.typekit.net/jin2fry.css" />
+  </head>
+  <body class="has-search">
+    <header class="header">
+      <div class="container">
+        <div class="header-block">
+          <div class="row align-items-lg-center">
+            <div class="col-lg-auto header-logo-column">
+              <div class="header-logo">
+                <a href="/" class="navbar-brand">
+                  <img
+                    src="http://cdn.zeplin.io/601a529e1d0b7321e6fcd84e/assets/6905C8B4-D3F5-473F-996C-88293B621106.png"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg">
+              <div class="booking-steps">
+                <div class="booking-steps-item room-selection is-active">
+                  <a href="#" class="booking-steps-link">
+                    ROOM SELECTION <i class="icons icons--check"></i
+                  ></a>
+                </div>
+                <div class="booking-steps-item transfer-selection is-active">
+                  <a href="#" class="booking-steps-link"
+                    >TRANSFER SELECTION <i class="icons icons--check"></i
+                  ></a>
+                </div>
+                <div class="booking-steps-item guest-information">
+                  <a href="#" class="booking-steps-link"
+                    >GUEST INFORMATION <i class="icons icons--check"></i
+                  ></a>
+                </div>
+                <div class="booking-steps-item payment">
+                  <a href="#" class="booking-steps-link"
+                    >PAYMENT <i class="icons icons--check"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-auto ml-auto">
+              <a href="/search-result.html" class="btn btn-primary btn--book-now">
+                BOOK NOW <i class="icons icons--arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-12 col-md-9">
+            <div class="search-steps">
+              <div class="search-steps__title-block">
+                <h2 class="title--lg">TRANSFER SELECTION</h2>
+              </div>
+              <div class="search-steps__transfers">
+                <div class="search-steps__banner">
+                  <img
+                    class="img-fluid"
+                    src="http://via.placeholder.com/949x419"
+                    alt="Transfers Banner"
+                  />
+                </div>
+                <div class="transfers-select mt-4">
+                  <div class="t_select-row">
+                    <div class="t_select-col has-after-arrow">
+                      <ul class="t_select-list">
+                        <li class="t_select-list-item">
+                          <a href="#" class="t_select-list-link">
+                            <div class="custom-checkbox">
+                              <input
+                                id="inpNeedTransfer"
+                                name="selectTransfer"
+                                type="radio"
+                                checked
+                              />
+                              <label for="inpNeedTransfer"> I Need Complimentary Transfer </label>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="t_select-list-item">
+                          <a href="#" class="t_select-list-link">
+                            <div class="custom-checkbox">
+                              <input id="inpNoTransfer" name="selectTransfer" type="radio" />
+                              <label for="inpNoTransfer"> I Dont Need Transfer </label>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="t_select-col">
+                      <ul class="t_select-list">
+                        <li class="t_select-list-item">
+                          <a href="#" class="t_select-list-link">
+                            <div class="custom-checkbox">
+                              <input id="inpRoundTrip" name="transfers" type="radio" />
+                              <label for="inpRoundTrip"> Round Trip </label>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="t_select-list-item">
+                          <a href="#" class="t_select-list-link">
+                            <div class="custom-checkbox">
+                              <input id="inpOnlyArrival" name="transfers" type="radio" />
+                              <label for="inpOnlyArrival"> Only Arrival </label>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="t_select-list-item">
+                          <a href="#" class="t_select-list-link">
+                            <div class="custom-checkbox">
+                              <input id="inpOnlyDeparture" name="transfers" type="radio" />
+                              <label for="inpOnlyDeparture"> Only Departure </label>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="arrivalTransfer" class="row mt-5">
+                    <div class="col-12 col-lg-11">
+                      <h4 class="title font-family--didot">ARRIVAL TRANSFER</h4>
+                      <div class="bordered-box mt-3">
+                        <ul class="transfers-list">
+                          <li class="transfers-list-item">
+                            <input
+                              id="inpArrivalFreeTransfer"
+                              type="radio"
+                              name="arrivalTransfers"
+                            />
+                            <label for="inpArrivalFreeTransfer">
+                              <div class="bordered-box--inner">
+                                <figure class="image">
+                                  <img class="img-fluid" src="http://via.placeholder.com/263x171" />
+                                </figure>
+                                <div class="bordered-box--inner bordered-box--transfer">
+                                  <div class="from">
+                                    <p class="description">Milas Bodrum Airport</p>
+                                  </div>
+                                  <div class="to">
+                                    <p class="description">Lujo<br />Hotel</p>
+                                  </div>
+                                </div>
+                                <div class="transfers-type">
+                                  <h4 class="title text-center mb-3">VIP Transfer</h4>
+                                  <span>COMPLIMENTARY</span>
+                                </div>
+                              </div>
+                            </label>
+                          </li>
+                          <li class="transfers-list-item">
+                            <input
+                              id="inpArrivalVIPTransfer"
+                              type="radio"
+                              name="arrivalTransfers"
+                            />
+                            <label for="inpArrivalVIPTransfer">
+                              <div class="bordered-box--inner">
+                                <figure class="image">
+                                  <img class="img-fluid" src="http://via.placeholder.com/263x171" />
+                                </figure>
+                                <div class="bordered-box--inner bordered-box--transfer">
+                                  <div class="from">
+                                    <p class="description">Milas Bodrum Airport</p>
+                                  </div>
+                                  <div class="to">
+                                    <p class="description">Lujo<br />Hotel</p>
+                                  </div>
+                                </div>
+                                <div class="transfers-type">
+                                  <h4 class="title text-center mb-3">VIP Transfer</h4>
+                                  <span>250 EURO</span>
+                                </div>
+                              </div>
+                            </label>
+                          </li>
+                        </ul>
+                        <div id="arrivalTransferInfo" class="form-row mt-4">
+                          <div class="col-12">
+                            <h4 class="title title--sm font-family--didot">FLIGHT INFORMATION</h4>
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpArrivalFlightTime"
+                              type="time"
+                              class="form-control"
+                              placeholder="00:00"
+                            />
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpArrivalFlightNumber"
+                              type="text"
+                              class="form-control"
+                              placeholder="Flight Number"
+                            />
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpArrivalNote"
+                              type="text"
+                              class="form-control"
+                              placeholder="Note"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="departureTransfer" class="row mt-5">
+                    <div class="col-12 col-lg-11">
+                      <h4 class="title font-family--didot">DEPARTURE TRANSFER</h4>
+                      <div class="bordered-box mt-3">
+                        <ul class="transfers-list">
+                          <li class="transfers-list-item">
+                            <input
+                              id="inpDepartureFreeTransfer"
+                              type="radio"
+                              name="departureTransfers"
+                            />
+                            <label for="inpDepartureFreeTransfer">
+                              <div class="bordered-box--inner">
+                                <figure class="image">
+                                  <img class="img-fluid" src="http://via.placeholder.com/263x171" />
+                                </figure>
+                                <div class="bordered-box--inner bordered-box--transfer">
+                                  <div class="from">
+                                    <p class="description">Milas Bodrum Airport</p>
+                                  </div>
+                                  <div class="to">
+                                    <p class="description">Lujo<br />Hotel</p>
+                                  </div>
+                                </div>
+                                <div class="transfers-type">
+                                  <h4 class="title text-center mb-3">VIP Transfer</h4>
+                                  <span>COMPLIMENTARY</span>
+                                </div>
+                              </div>
+                            </label>
+                          </li>
+                          <li class="transfers-list-item">
+                            <input
+                              id="inpDepartureVIPTransfer"
+                              type="radio"
+                              name="departureTransfers"
+                            />
+                            <label for="inpDepartureVIPTransfer">
+                              <div class="bordered-box--inner">
+                                <figure class="image">
+                                  <img class="img-fluid" src="http://via.placeholder.com/263x171" />
+                                </figure>
+                                <div class="bordered-box--inner bordered-box--transfer">
+                                  <div class="from">
+                                    <p class="description">Milas Bodrum Airport</p>
+                                  </div>
+                                  <div class="to">
+                                    <p class="description">Lujo<br />Hotel</p>
+                                  </div>
+                                </div>
+                                <div class="transfers-type">
+                                  <h4 class="title text-center mb-3">VIP Transfer</h4>
+                                  <span>250 EURO</span>
+                                </div>
+                              </div>
+                            </label>
+                          </li>
+                        </ul>
+                        <div id="arrivalTransferInfo" class="form-row mt-4">
+                          <div class="col-12">
+                            <h4 class="title title--sm font-family--didot">FLIGHT INFORMATION</h4>
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpDepartureFlightTime"
+                              type="time"
+                              class="form-control"
+                              placeholder="00:00"
+                            />
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpDepartureFlightNumber"
+                              type="text"
+                              class="form-control"
+                              placeholder="Flight Number"
+                            />
+                          </div>
+                          <div class="col-12 col-lg-4 mt-3">
+                            <input
+                              id="inpDepartureNote"
+                              type="text"
+                              class="form-control"
+                              placeholder="Note"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
+                    <div class="col-12">
+                      <h2 class="title font-family--didot">IMPORTANT INFORMATION</h2>
+                      <p class="description--lg mt-5">
+                        Dear guest, according to the regulation of Bodrum / Milas airport, Lujo
+                        SELECTUM vehicles are waiting for you at the INTERNATIONAL TERMINAL during
+                        your trips to Bodrum. <br /><br />
+
+                        If you are travelling with only cabin luggage, you can use the exit of the
+                        INTERNATIONAL TERMINAL. <br /><br />
+
+                        Please send us an e- mail to info@lujohotel.com before your trip so that we
+                        can wait for you at the exit of the Domestic Terminal if you are travelling
+                        with one cabin baggage only.<br /><br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="reservation-summary">
+              <div class="reservation-summary-block">
+                <div class="reservation-summary-title-block">
+                  <h4 class="title--2xl">Reservation Summary</h4>
+                </div>
+                <div class="reservation-summary-details">
+                  <div class="row">
+                    <div class="col-6 text-center">
+                      <h4 class="title--2xs text-color--clay-brown">Check-in</h4>
+                      <h4 class="title--2xs text-color--brownish-grey mt-2">1 Apr 2021 Thu.</h4>
+                    </div>
+                    <div class="col-6 text-center">
+                      <h4 class="title--2xs text-color--clay-brown">Check-out</h4>
+                      <h4 class="title--2xs text-color--brownish-grey mt-2">10 Apr 2021 Sat.</h4>
+                    </div>
+                  </div>
+                  <div class="bordered-box">
+                    <figure class="image">
+                      <img
+                        class="img-fluid"
+                        src="http://via.placeholder.com/248x88"
+                        alt="Selected Room Image"
+                      />
+                    </figure>
+                    <div class="row">
+                      <div class="col-12">
+                        <h4 class="title">Superior Room Sea View</h4>
+                        <p class="description mt-2">9 Night - 3 Adults</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="bordered-box bg--light-pink">
+                          <p class="description--sm">Room Price</p>
+                          <span class="amount text-right"> 3,886 EUR </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bordered-box">
+                    <div class="row mt-2">
+                      <div class="col-12">
+                        <h4 class="title text-center">Arrival Transfer</h4>
+                      </div>
+                    </div>
+                    <div class="row pt-2 align-items-center justify-content-between">
+                      <div class="col-auto">
+                        <p class="description--sm text-color--brownish-grey">10.04.2020</p>
+                      </div>
+                      <div class="col-6">
+                        <h4 class="title text-center">VIP Transfer</h4>
+                      </div>
+                    </div>
+                    <div class="bordered-box--inner bordered-box--transfer">
+                      <div class="from">
+                        <p class="description">Milas Bodrum Airport</p>
+                      </div>
+                      <div class="to">
+                        <p class="description">Lujo<br />Hotel</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="bordered-box bg--light-pink">
+                          <p class="description--sm">Transfer Price</p>
+                          <span class="amount text-right"> 250 EUR </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bordered-box">
+                    <div class="row mt-2">
+                      <div class="col-12">
+                        <h4 class="title text-center">Departure Transfer</h4>
+                      </div>
+                    </div>
+                    <div class="row pt-2 align-items-center justify-content-between">
+                      <div class="col-auto">
+                        <p class="description--sm text-color--brownish-grey">10.04.2020</p>
+                      </div>
+                      <div class="col-6">
+                        <h4 class="title text-center">VIP Transfer</h4>
+                      </div>
+                    </div>
+                    <div class="bordered-box--inner bordered-box--transfer">
+                      <div class="from">
+                        <p class="description">Lujo Hotel</p>
+                      </div>
+                      <div class="to">
+                        <p class="description">Milas Bodrum Airport</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="bordered-box bg--light-pink">
+                          <p class="description--sm">Transfer Price</p>
+                          <span class="amount text-right"> 250 EUR </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <p class="description text-color--brownish-grey">
+                        - Information About Accommodation Tax
+                      </p>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-6">
+                      <div class="bordered-box--primary promotion">
+                        <p class="description info">Promotion</p>
+                        <input class="promotion-input text-center mb-2" />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="bordered-box--primary">
+                        <p class="description info">Total</p>
+                        <p class="description amount--old">4,886 EUR</p>
+                        <p class="amount--lg">4,886 EUR</p>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <a
+                        href="payment.html"
+                        class="btn--continue btn btn-primary d-flex align-items-center justify-content-center"
+                      >
+                        CONTINUE
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reservation-contact-block">
+                <div class="row">
+                  <div class="col-12">
+                    <h4 class="title--md font-family--athelas font-italic">
+                      Your reservation<br />You can do it by calling us.
+                    </h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <a href="#" class="d-block btn btn-primary">
+                      <i class="icons icons--phone"></i>
+                      +90 (242) 722 42 00
+                    </a>
+                  </div>
+                </div>
+                <hr class="with-star" />
+                <div class="row">
+                  <div class="col-12">
+                    <p class="description--md">
+                      © 2021 Selectum Hotels & Resort<br />
+                      Tüm hakları saklıdır.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-block">
+          <div class="row align-items-lg-center">
+            <div class="col-lg">
+              <p class="copyright-text ml-lg-4">
+                © 2021 Selectum Hotels & Resort / Tüm hakları saklıdır.
+              </p>
+            </div>
+            <div class="col-lg-auto ml-auto text-right">
+              <p class="footer-description">
+                Rezervasyonunuzu<br />
+                bizi arayarak yapabilirsiniz.
+              </p>
+            </div>
+            <div class="col-lg-auto">
+              <a href="tel:+902427224200" class="btn btn-primary">
+                <i class="icons icons--phone"></i>
+                +90 (242) 722 42 00
+              </a>
+            </div>
+            <div class="col-lg-auto">
+              <div class="language-btn">
+                TR
+
+                <div class="language-list">
+                  <ul>
+                    <li>TR</li>
+                    <li>EN</li>
+                    <li>DE</li>
+                    <li>RU</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="http://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="http://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="http://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="lib/jquery-daterangepicker/jquery.daterangepicker.min.js"></script>
+    <script src="lib/owl.carousel2/owl.carousel.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>

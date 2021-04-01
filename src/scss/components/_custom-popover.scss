@@ -1,0 +1,135 @@
+.custom-popover {
+  position: absolute;
+  min-width: 26.8rem;
+  background-color: $white;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2.6rem;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+  transition: opacity $duration;
+
+  &.flight-popover {
+    min-width: 60.2rem;
+    padding-top: 2.1rem;
+    padding-bottom: 2.1rem;
+    padding-left: 5.2rem;
+    padding-right: 5.2rem;
+
+    .form-row {
+      + .form-row {
+        margin-top: 1.2rem;
+      }
+    }
+
+    .btn {
+      font-size: 1.5rem;
+      line-height: 1.37;
+      padding: 0.7rem 0;
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.2rem;
+      border-radius: 0.2rem;
+    }
+  }
+
+  &.adults-child-popover {
+    padding: 2.8rem;
+
+    .row {
+      + .row {
+        margin-top: 2.4rem;
+        padding-top: 2.4rem;
+        border-top: 1px solid $colors-dirty-white;
+      }
+    }
+
+    .form-control {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+  }
+
+  font-size: 1.7rem;
+  line-height: 1;
+  color: $colors-black;
+
+  .plus,
+  .minus {
+    display: inline-block;
+    border-radius: 50%;
+    width: 2.1rem;
+    height: 2.1rem;
+    text-align: center;
+    line-height: 1;
+    user-select: none;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.8);
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 1rem;
+    border-left-width: 1rem;
+    border-bottom: 1rem solid $white;
+    transform: translate(-50%, -100%);
+  }
+
+  .child-row {
+    position: relative;
+
+    > * {
+      select {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-right-width: 1rem;
+      border-left-width: 1rem;
+      border-bottom: 1rem solid $white;
+      transform: translate(-50%, -15%) rotate(-180deg);
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-right-width: 1rem;
+      border-left-width: 1rem;
+      border-bottom: 1rem solid $colors-dirty-white;
+      transform: translate(-50%, 0%) rotate(-180deg);
+    }
+  }
+}

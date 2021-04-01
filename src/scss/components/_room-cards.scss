@@ -1,0 +1,69 @@
+.room-cards {
+  border: 1px solid rgba(#979797, 0.5);
+  border-radius: 8px;
+  min-height: fluidAmount(488, 1600, vw);
+  padding: 1rem;
+
+  .amount {
+    display: block;
+    font-family: $ff-Didot;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: $black;
+
+    &--old {
+      font-family: $ff-Didot;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.11;
+      color: $colors-secondary;
+    }
+  }
+
+  .btn {
+    &--transparent-bordered {
+      font-family: $ff-TheanoDidot;
+      font-size: 1.2rem;
+      line-height: 1.42;
+      color: $black;
+      border-radius: 6px;
+      border: 1px solid rgba(#c2c2c2, 0.3);
+      padding-left: 1.12rem;
+      padding-right: 1.12rem;
+    }
+
+    &-primary {
+      font-family: $ff-Didot;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1;
+      color: $black;
+    }
+  }
+
+  > * {
+    + * {
+      margin-top: 1rem;
+
+      > [class*="col-12"] {
+        + * {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(2xl) {
+    min-height: 48.8rem;
+  }
+
+  .box--bordered {
+    border: 1px solid rgba(#979797, 0.5);
+    border-radius: 4px;
+    padding-left: 1rem;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+}
