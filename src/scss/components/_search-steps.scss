@@ -1,6 +1,100 @@
 .search-steps {
   padding-bottom: 6rem;
 
+  &-list {
+    display: flex;
+    flex-wrap: nowrap;
+
+    > * {
+      position: relative;
+      min-height: 1px;
+      width: auto;
+      flex: 0 0 auto;
+      max-width: 100%;
+
+      &.is-active,
+      &.is-past {
+        > * {
+          &:after {
+            background-image: url('../../images/svg/selected-circle.svg');
+          }
+        }
+      }
+
+      + * {
+        $width: 3.6rem;
+
+        margin-left: $width;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: $width - 0.7rem;
+          height: 1px;
+          background-color: rgba($colors-secondary, 0.5);
+          transform: translateX(calc(-100% - 0.6rem));
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: $colors-secondary;
+          top: 50%;
+          transform: translate(calc(-100% - 0.6rem), calc(-50% + 0.5px));
+        }
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      border-radius: 1.6rem;
+      height: 3.2rem;
+      border: 1px solid rgba($colors-secondary, 0.5);
+      padding-left: 1.1rem;
+      padding-right: 2.7rem;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0.8rem;
+        width: 1.3rem;
+        height: 1.3rem;
+        background-color: $colors-primary;
+        border: 1px solid rgba($colors-secondary, 0.5);
+        border-radius: 50%;
+        background-position: center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 1.125vw;
+        padding: 0.5rem;
+        padding-right: 1.7rem;
+        height: 2.8rem;
+
+        &::after {
+          transform: translateY(-50%) scale(0.75);
+          right: 0.4rem;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
   @include media-breakpoint-up(1280) {
     &__guests {
       max-width: 70.3rem;
@@ -18,22 +112,27 @@
   }
 
   &__title-block {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1.4rem;
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 2rem;
+    }
 
     .title--lg {
-      font-size: 2.4rem;
+      font-size: 1.8rem;
       font-family: $ff-Didot;
       font-weight: 700;
       color: $colors-black;
+
+      @include media-breakpoint-up(xl) {
+        font-size: 2.4rem;
+      }
     }
   }
 
   &__results {
     display: flex;
     flex-wrap: wrap;
-    // min-width: fluidAmount(950, 1600, vw);
-    // width: fluidAmount(950, 1600, vw);
 
     > * {
       position: relative;
@@ -41,25 +140,47 @@
       width: 100%;
       max-width: 100%;
 
+      @include media-breakpoint-down(sm) {
+        + * {
+          margin-top: 1rem;
+        }
+      }
+
       $gap: fluidAmount(40, 1600, vw);
 
-      @include media-breakpoint-between(sm, md) {
-        &:not(:nth-child(2n + 1)) {
+      @include media-breakpoint-between(md, lg) {
+        $mw: calc((100% - (#{$gap} * 2)) / 3);
+        flex: 0 0 $mw;
+        max-width: $mw;
+
+        &:not(:nth-child(3n + 1)) {
           margin-left: auto;
         }
 
-        &:nth-child(n + 3) {
+        &:nth-child(n + 4) {
           margin-top: $gap;
         }
       }
 
-      @include media-breakpoint-up(md) {
-        $mw: calc((100% - (#{$gap})) / 2);
+      @include media-breakpoint-up(xl) {
+        $gap: 15px;
+
+        $mw: calc((100% - (#{$gap} * 2)) / 3);
         flex: 0 0 $mw;
         max-width: $mw;
+
+        &:not(:nth-child(3n + 1)) {
+          margin-left: auto;
+        }
+
+        &:nth-child(n + 4) {
+          margin-top: $gap;
+        }
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(1600) {
+        $gap: 40px;
+
         $mw: calc((100% - (#{$gap} * 2)) / 3);
         flex: 0 0 $mw;
         max-width: $mw;
@@ -94,8 +215,8 @@
         background-color: $white;
 
         &.is-active {
-          border-color: $colors-secondary-light;
-          background-color: $colors-secondary-light;
+          border-color: $colors-secondary;
+          background-color: $colors-secondary;
         }
       }
 

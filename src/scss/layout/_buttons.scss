@@ -1,12 +1,21 @@
 .language-btn {
   display: inline-block;
+  font-size: 1.4rem;
   line-height: 1.7;
   border-radius: 0.2rem;
   border: 1px solid rgba($colors-secondary, 0.5);
   color: $colors-secondary;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  padding-left: 0.75rem;
+  padding-right: 1.325rem;
+
+  background-image: url('../../images/svg/select--yellow.svg');
+  background-position: calc(100% - (0.6rem));
+  background-size: 0.6rem;
+  background-repeat: no-repeat;
 
   @include media-breakpoint-up(lg) {
-    font-size: 1.4rem;
     padding: 0.5rem 1rem;
   }
 
@@ -27,16 +36,22 @@
   }
 
   &--book-now {
+    position: relative;
+    display: block;
+
+    .icons {
+      margin-left: 2.5rem;
+
+      @include media-breakpoint-between(md, lg) {
+        margin-left: 0.8rem;
+      }
+    }
+
     @include media-breakpoint-up(lg) {
       font-size: 2.04rem;
       color: $colors-black;
       line-height: 1.27;
       padding: 1.75rem 2rem 1.275rem 2.35rem;
-
-      .icons {
-        margin-left: 1.4rem;
-        margin-bottom: 0.5rem;
-      }
     }
   }
 

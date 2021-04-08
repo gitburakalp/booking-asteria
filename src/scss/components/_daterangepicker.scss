@@ -8,6 +8,22 @@
   font-family: $ff-TheanoDidot;
   color: #323232;
 
+  @include media-breakpoint-down(sm) {
+    min-width: 100%;
+    left: 0 !important;
+
+    .month-wrapper {
+      &::before {
+        left: 50%;
+        transform: translate(-50%, -100%);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: 0 !important;
+  }
+
   .drp_top-bar {
     display: none;
   }
@@ -59,10 +75,17 @@
     padding-right: 2.3rem;
     padding-left: 2.3rem;
 
+    @include media-breakpoint-between(md, lg) {
+      margin-top: 1.2rem;
+
+      &::before {
+        content: none !important;
+      }
+    }
+
     &:before {
       content: '';
       position: absolute;
-      left: 9rem;
       top: 0;
       width: 0;
       height: 0;
@@ -70,18 +93,32 @@
       border-right-width: 1rem;
       border-left-width: 1rem;
       border-bottom: 1rem solid $white;
-      transform: translateY(-100%);
+
+      @include media-breakpoint-up(md) {
+        left: 9rem;
+        transform: translateY(-100%);
+      }
     }
 
     table[class*='month'] {
       table-layout: fixed;
-      width: auto;
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
 
       td,
       th {
         margin: 1rem;
-        min-width: 3.4rem;
         font-weight: 400;
+
+        @include media-breakpoint-up(md) {
+          .day {
+            min-width: 2.2rem;
+            width: 2.2rem;
+          }
+        }
       }
 
       .day {
@@ -91,7 +128,6 @@
         letter-spacing: -0.034rem;
         line-height: 1.95;
         border-radius: 50%;
-        min-width: 2.4rem;
 
         &.real-today {
           background-color: $colors-secondary;
@@ -117,26 +153,32 @@
     }
 
     .gap {
-      width: 1px;
-      background-color: transparent;
-      margin: 0 49px;
-      visibility: visible !important;
-      min-height: 22rem;
-      height: auto !important;
-
-      &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        background-color: $colors-dirty-white;
-        height: 13.6rem;
-        width: 1px;
-        top: 50%;
-        transform: translateY(-50%);
+      @include media-breakpoint-down(sm) {
+        display: none;
       }
 
-      .gap-lines {
-        display: none;
+      @include media-breakpoint-up(md) {
+        width: 1px;
+        background-color: transparent;
+        margin: 0 49px;
+        visibility: visible !important;
+        min-height: 22rem;
+        height: auto !important;
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          background-color: $colors-dirty-white;
+          height: 13.6rem;
+          width: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .gap-lines {
+          display: none;
+        }
       }
     }
   }
@@ -146,34 +188,12 @@
 
     .caption {
       height: 4.2rem;
+    }
 
-      .prev,
-      .next {
-        position: absolute;
-        display: inline-block;
-        top: 1rem;
-        width: 5.9rem;
-        height: 2rem;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        transition: opacity $duration;
-
-        &:hover {
-          background-color: transparent !important;
-          opacity: 0.5;
-        }
-      }
-
-      .prev {
-        background-image: url('../../images/svg/arrow-left.svg');
-        left: -2.3rem;
-      }
-
-      .next {
-        background-image: url('../../images/svg/arrow-right.svg');
-        right: -2.3rem;
-      }
+    .prev,
+    .next {
+      position: relative;
+      display: inline-block;
     }
 
     .month-name {

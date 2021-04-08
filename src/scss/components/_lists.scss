@@ -8,6 +8,14 @@
   }
 }
 
+#moneyOrder {
+  .custom-check {
+    label {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 .radio-lists-block {
   position: relative;
 
@@ -18,16 +26,11 @@
     > * {
       position: relative;
       min-height: 1px;
-      width: 100%;
-      max-width: 100%;
+      flex: 0 0 auto;
+      width: auto;
 
-      @include media-breakpoint-up(md) {
-        flex: 0 0 auto;
-        width: auto;
-
-        + * {
-          margin-left: 0.8rem;
-        }
+      + * {
+        margin-left: 0.8rem;
       }
     }
 
@@ -42,18 +45,30 @@
       border-color: $colors-border-color-light;
       background-color: $white;
 
+      label {
+        font-size: 1.6rem;
+      }
+
       &.is-active {
-        border-color: $colors-secondary-light;
-        background-color: $colors-secondary-light;
+        border-color: $colors-secondary;
+        background-color: $colors-secondary;
       }
     }
 
     &-contents {
-      margin-top: 4.3rem;
+      margin-top: 1.6rem;
+
+      @include media-breakpoint-up(xl) {
+        margin-top: 4.3rem;
+      }
 
       .form-row {
         + * {
-          margin-top: 3.7rem;
+          margin-top: 1.6rem;
+
+          @include media-breakpoint-up(xl) {
+            margin-top: 3.7rem;
+          }
         }
       }
 
@@ -63,7 +78,11 @@
         }
 
         .title-row {
-          margin-bottom: 2.5rem;
+          margin-bottom: 1.6rem;
+
+          @include media-breakpoint-up(xl) {
+            margin-bottom: 2.5rem;
+          }
         }
 
         &.is-active {

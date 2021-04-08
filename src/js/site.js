@@ -14,6 +14,7 @@ function setHeaderFooterHeights() {
 
 function setDatepickers() {
   $('.datepicker').each(function () {
+    var ww = $(window).outerWidth();
     var $this = $(this);
     var isSinglepicker = $this.hasClass('is-singlepicker');
     var isChildpicker = $this.hasClass('is-childpicker');
@@ -31,18 +32,14 @@ function setDatepickers() {
 
     var config = {
       startDate: isSinglepicker ? false : moment(today).format(jsFormat),
-      singleMonth: isSinglepicker,
-      singleDate: isSinglepicker,
-      monthSelect: isSinglepicker,
-      yearSelect: yearSelectVal,
       autoClose: true,
       format: jsFormat,
       language: lang,
-      inline: ww < 768 ? (isSinglepicker ? false : true) : false,
+      inline: false,
       startOfWeek: 'monday',
       container: $this.parent(),
-      customArrowPrevSymbol: ' ',
-      customArrowNextSymbol: ' ',
+      customArrowPrevSymbol: '<i class="icons icons--prev">Prev</i>',
+      customArrowNextSymbol: '<i class="icons icons--next">Next</i>',
       ignoreReadonly: true,
       separator: ' - ',
       stickyMonths: true,
@@ -60,6 +57,7 @@ function setDatepickers() {
         if ($(this).attr('readonly') || (!$(this).is(':disabled') && s != $(this).val())) {
           $(this).val(s);
           $this.parent().addClass('has-value');
+          $this.parent().addClass('is-selected');
 
           if (s.includes('-')) {
             $(this).parent().find('#inpCheckinDate').val(s.split('-')[0].trim());
@@ -69,14 +67,22 @@ function setDatepickers() {
       },
     };
 
+    if (ww > 767) {
+      config['singleMonth'] = isSinglepicker;
+      config['singleDate'] = isSinglepicker;
+      config['singleDate'] = isSinglepicker;
+      config['monthSelect'] = isSinglepicker;
+      config['yearSelect'] = isSinglepicker;
+    }
+
     $this.dateRangePicker(config);
   });
 }
 
 function setMinusPlus() {
-  $('.minus,.plus').on('click', function () {
+  $('.minus-plus-buttons').on('click', function () {
     var $this = $(this);
-    var $closestRow = $this.closest('.row');
+    var $closestRow = $this.closest('[class*=row]');
     var $el = $closestRow.find('span[id*=Count]');
 
     var isMinus = $this.hasClass('minus');
@@ -90,6 +96,9 @@ function setMinusPlus() {
     } else {
       if (elValue < maxValue) $el.text(++elValue);
     }
+
+    $el.trigger('change');
+    $el.closest('.select-box').addClass('has-value');
 
     if (isChild) {
       if (elValue > 0) {
@@ -229,7 +238,9 @@ function setPopovers() {
       trigger: 'focus',
       placement: placement,
       template:
-        '<div class="popover" role="tooltip">' +
+        '<div class="popover ' +
+        popoverClass +
+        '" role="tooltip">' +
         (isDailyRates ? '' : '<div class="arrow"></div>') +
         '<h3 class="popover-header"></h3><div class="popover-body ' +
         popoverClass +
@@ -276,11 +287,63 @@ function setRadioListTabs() {
   });
 }
 
+function isOwnHeaderSelectClicked(evt, selfObj) {
+  return (
+    selfObj.contains(evt.target) ||
+    evt.target == selfObj ||
+    (selfObj.childNodes != undefined && $.inArray(evt.target, selfObj.childNodes) >= 0)
+  );
+}
+
+function outsideClickClose(evt) {
+  var box = document.querySelector('.header-select.is-active');
+
+  if (!isOwnHeaderSelectClicked(evt, $(box)[0])) {
+    if ($(box).is(':visible')) $(box).removeClass('is-active');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  var hasSearch = $('body').hasClass('has-search');
+
+  //loading htmlComponents -> purehtml
+
+  $('header').each(function () {
+    var headerComponent = hasSearch
+      ? 'html-components/header-search.html'
+      : 'html-components/header.html';
+
+    $(this).load(headerComponent);
+  });
+
+  $('footer').each(function () {
+    !hasSearch ? $(this).load('html-components/footer.html') : '';
+  });
+});
+
+window.onload = function () {
+  $('body').addClass('is-loaded');
+
+  $('.btn-primary').each(function () {
+    $(this).attr('href', $('.btn--continue').attr('href'));
+  });
+
   setHeaderFooterHeights();
   setDatepickers();
   setMinusPlus();
   setRadioListTabs();
+
+  $('.hotel-select').each(function () {
+    $('input[type=radio]').change(function () {
+      var $this = $(this);
+
+      $('.hotel-select .custom-check').removeClass('is-active');
+      $this.parent().addClass('is-active');
+      $this.closest('.header-select').find('#inpSelectedHotel').val($this.next().text());
+    });
+  });
+
+  $(document).on('click.header-select', outsideClickClose);
 
   $('.header').each(function () {
     $('.is-active').each(function () {
@@ -300,23 +363,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setPopovers();
 
-  $('body:not(.has-search)').on('click', function (e) {
-    var isSearchBlock = $(e.target).closest('.search-form-block').length != 0;
-    var isCustomPopover = $(e.target).closest('.custom-popover').length != 0;
+  $('.adults-child-popover #adultCount,.adults-child-popover #childCount').change(function () {
+    var $this = $(this);
+    var $popover = $('.adults-child-popover');
+    var $el = $this.closest('.adults-child-popover').prev();
 
-    if (!isSearchBlock && !isCustomPopover) {
-      $('.is-active').removeClass('is-active');
+    var childCount = $popover.find('#childCount').text();
+
+    if (childCount < 1) {
+      $el.val($popover.find('.row:nth-child(1)').text().trim());
+    } else {
+      $el.val(
+        $popover.find('.row:nth-child(1)').text().trim() +
+          ', ' +
+          $popover.find('.row:nth-child(2)').text().trim(),
+      );
     }
   });
 
-  $('body:not(.has-search) .search-form-block').each(function () {
-    var $searchFormBlock = $(this);
+  $('.header-select').on('click', function () {
     var activeClass = 'is-active';
 
-    $searchFormBlock.find('.select-box').on('click', function () {
-      $searchFormBlock.find('.select-box').removeClass(activeClass);
-      $(this).addClass(activeClass);
-    });
+    $('.header-select').removeClass(activeClass);
+    $(this).addClass(activeClass);
   });
 
   $('#inpDiffBilling').on('change', function () {
@@ -324,12 +393,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   setRoomImageSlider();
-});
 
-window.onload = function () {
-  $('body').addClass('is-loaded');
-
-  $('.btn-primary').each(function () {
-    $(this).attr('href', $('.btn--continue').attr('href'));
+  $('.reservation-budget').on('click', function () {
+    $(this).parent().addClass('is-shown');
   });
+
+  if (ww < 1200) {
+    $('.reservation-summary')
+      .find('.close-btn')
+      .on('click', function () {
+        $(this).parent().removeClass('is-shown');
+      });
+  }
 };

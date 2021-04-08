@@ -12,11 +12,16 @@
     line-height: 1.2;
     color: $black;
 
+    @include media-breakpoint-between(md, lg) {
+      font-size: 1.4rem;
+    }
+
     &--old {
+      display: block;
       font-family: $ff-Didot;
       font-weight: 400;
       font-size: 1.4rem;
-      line-height: 1.11;
+      line-height: 1.25;
       color: $colors-secondary;
     }
   }
@@ -46,7 +51,7 @@
     + * {
       margin-top: 1rem;
 
-      > [class*="col-12"] {
+      > [class*='col-12'] {
         + * {
           margin-top: 1rem;
         }

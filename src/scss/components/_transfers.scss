@@ -1,106 +1,8 @@
 $borderColor: rgba(#c2c2c2, 0.3);
 
 .transfers {
-  &--from-to-block {
-    position: relative;
-
-    border-radius: 0.4rem;
-
-    display: flex;
-    flex-wrap: nowrap;
-
-    &.bordered {
-      border: 1px solid $borderColor;
-
-      .transfers-from {
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 1px;
-          background-color: $borderColor;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 1.8rem;
-          height: 1.8rem;
-          border-radius: 50%;
-          border: 1px solid $borderColor;
-          top: 50%;
-          right: 0;
-          transform: translate(50%, -50%);
-          background-color: $white;
-          background-image: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='rgba(151,151,151,0.5)'%3E%3Cpath d='M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z'%3E%3C/path%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-size: 0.75rem;
-          background-position: center;
-        }
-      }
-    }
-
-    &:not(.bordered) {
-      justify-content: space-between;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: $white;
-        border-radius: 50%;
-        width: 2.4rem;
-        height: 2.4rem;
-        @extend %noRepeatImage;
-        background-image: url('/images/svg/svg-icons.svg#svgView(viewBox(0,1024,512,512))');
-        background-size: 1.125rem;
-      }
-
-      > * {
-        $mw: calc((100% - 1rem) / 2);
-        flex: 0 0 $mw;
-        max-width: $mw;
-        background-color: $colors-secondary-light;
-      }
-    }
-
-    > * {
-      position: relative;
-      min-height: 1px;
-      width: auto;
-      max-width: 100%;
-
-      flex-basis: 0;
-      flex-grow: 1;
-      padding-top: 0.85rem;
-      padding-bottom: 0.85rem;
-    }
-  }
-
-  &-from {
-    padding-right: 1rem;
-
-    + * {
-      margin-left: 1rem;
-    }
-  }
-
-  &-from,
-  &-to {
-    font-family: $ff-TheanoDidot;
-    font-size: 1.4rem;
-    font-weight: normal;
-    line-height: 1.11;
-    color: $black;
-    text-align: center;
-  }
-
   &-select {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       .has-after-arrow {
         + * {
           &::before {
@@ -128,19 +30,17 @@ $borderColor: rgba(#c2c2c2, 0.3);
         > * {
           position: relative;
           min-height: 1px;
-          width: 100%;
+          width: auto;
+          flex: 0 0 auto;
           max-width: 100%;
 
           @include media-breakpoint-up(xl) {
-            width: auto;
-            flex: 0 0 auto;
-
             + * {
               margin-left: 3.4rem;
             }
           }
 
-          @include media-breakpoint-down(sm) {
+          @include media-breakpoint-down(lg) {
             + * {
               margin-top: 1.5rem;
             }
@@ -148,11 +48,22 @@ $borderColor: rgba(#c2c2c2, 0.3);
         }
       }
 
+      $spacing: 0.7rem;
+
       &-col {
         position: relative;
         border-radius: 0.8rem;
-        padding: 1rem;
+        padding: $spacing;
         border: 1px solid rgba(#4b4b4b, 0.5);
+
+        @include media-breakpoint-down(lg) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-up(lg) {
+          padding: $spacing;
+        }
       }
 
       &-list {
@@ -161,41 +72,61 @@ $borderColor: rgba(#c2c2c2, 0.3);
 
         label {
           font-family: $ff-TheanoDidot;
-          font-size: 1.4rem !important;
+          font-size: 1rem !important;
           color: $colors-brownish-grey !important;
+
+          @include media-breakpoint-up(md) {
+            font-size: 1.4rem !important;
+          }
         }
 
         > * {
           position: relative;
           min-height: 1px;
-          width: 100%;
+          flex: 0 0 auto;
+          width: auto;
           max-width: 100%;
 
-          @include media-breakpoint-up(md) {
-            width: auto;
-            flex: 0 0 auto;
-
-            + * {
-              margin-left: 1rem;
-            }
+          + * {
+            margin-left: 0.5rem;
           }
         }
 
         &-item {
           border-radius: 0.2rem;
           border: 1px solid rgba(#4b4b4b, 0.5);
-          padding: 0.3rem 1rem;
+          padding: 0.1rem 0.27rem;
 
-          @include media-breakpoint-down(sm) {
-            + * {
-              margin-top: 1rem;
-            }
+          @include media-breakpoint-up(lg) {
+            padding: 0.3rem $spacing;
           }
         }
 
         &-link {
           display: block;
           position: relative;
+          line-height: 1;
+
+          .custom-check {
+            label {
+              $width: 1rem;
+              padding-left: $width + 0.23rem;
+
+              &:before,
+              &::after {
+                top: calc((1.7rem - #{$width}) / 2);
+
+                @include media-breakpoint-down(sm) {
+                  width: $width;
+                  height: $width;
+                }
+              }
+            }
+          }
+
+          label {
+            line-height: 1.7;
+          }
         }
       }
     }
@@ -210,10 +141,16 @@ $borderColor: rgba(#c2c2c2, 0.3);
       min-height: 1px;
       width: 100%;
       max-width: 100%;
+      $offset: 1rem;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-up(md) {
+        $mw: calc((100% - 1rem) / 2);
+
+        flex: 0 0 $mw;
+        max-width: $mw;
+
         + * {
-          margin-top: 1rem;
+          margin-left: auto;
         }
       }
 
@@ -241,7 +178,7 @@ $borderColor: rgba(#c2c2c2, 0.3);
     }
 
     &-item {
-      input[type='radio'] {
+      > input[type='radio'] {
         position: absolute;
         opacity: 0;
         z-index: -1;
@@ -314,11 +251,15 @@ $borderColor: rgba(#c2c2c2, 0.3);
 
           .description {
             font-size: 1.4rem;
+
+            @include media-breakpoint-between(md, lg) {
+              font-size: 1.2rem;
+            }
           }
 
           > * {
             border-radius: 0.4rem;
-            background-color: $colors-secondary-light;
+            background-color: $colors-secondary;
 
             $mw: calc((100% - 1rem) / 2);
 
@@ -347,9 +288,13 @@ $borderColor: rgba(#c2c2c2, 0.3);
 
     span {
       font-family: $ff-Didot;
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       font-weight: 700;
       display: block;
+
+      @include media-breakpoint-up(xl) {
+        font-size: 1.8rem;
+      }
     }
   }
 }

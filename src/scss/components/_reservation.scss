@@ -1,7 +1,105 @@
+.reservation-budget {
+  @include media-breakpoint-down(lg) {
+    padding: 1.1rem;
+    background-color: $white;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      left: 1.1rem +2.1rem;
+      width: 1.7rem;
+      height: 1.3rem;
+      background-image: url('../../images/svg/long-arrow--yellow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .row {
+      border-radius: 0.6rem;
+      background-color: $colors-primary;
+      padding: 1.364rem 1.9rem;
+    }
+
+    * {
+      color: $colors-secondary;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+}
+
 .reservation-summary {
-  position: sticky;
-  top: 0;
-  padding-bottom: 6rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  overflow-y: auto;
+
+  @include media-breakpoint-down(lg) {
+    left: 0;
+    right: 0;
+    box-shadow: 0 -1px 4px rgba(#575655, 0.5);
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    .reservation-summary-block {
+      max-width: 37.5rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 30rem;
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &:not(.is-shown) {
+      > *:not(.reservation-budget) {
+        display: none;
+      }
+    }
+
+    &.is-shown {
+      top: 0;
+      background-color: rgba($colors-primary, 0.6);
+      padding-bottom: 4.4rem;
+
+      .close-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1.4rem;
+        width: 3rem;
+        height: 3rem;
+        background-image: url('../../images/svg/times--white.svg');
+        filter: drop-shadow(0 0 1px rgba($colors-black, 0.5));
+      }
+
+      .reservation-summary-block {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .reservation-budget,
+      .reservation-contact-block {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    position: sticky;
+    top: 0;
+    padding-bottom: 6rem;
+
+    .close-btn {
+      display: none;
+    }
+  }
 
   @include media-breakpoint-up(1440) {
     width: 30rem;
@@ -12,7 +110,10 @@
     padding: 0.4rem;
     background-color: $colors-greyish-brown-dark;
     border-radius: 0.8rem;
-    margin-top: 4.4rem;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 4.4rem;
+    }
 
     .bordered-box {
       padding: 0.6rem;
@@ -44,6 +145,10 @@
         font-weight: 400;
         color: $black;
 
+        @include media-breakpoint-between(md, lg) {
+          font-size: 1.2rem;
+        }
+
         &--sm {
           font-size: 1.2rem;
           font-weight: 400;
@@ -58,7 +163,11 @@
         font-weight: 700;
         color: $colors-black;
         margin-top: 0 !important;
-        line-height: 1.25;
+        line-height: 1;
+
+        @include media-breakpoint-between(md, lg) {
+          font-size: 1.6rem;
+        }
       }
 
       > * {
@@ -91,6 +200,10 @@
         font-weight: 700;
         color: $colors-black;
         line-height: 1;
+
+        @include media-breakpoint-between(md, lg) {
+          font-size: 1.6rem;
+        }
       }
     }
 
@@ -200,6 +313,11 @@
     text-align: center;
     color: $colors-secondary;
 
+    @include media-breakpoint-between(md, lg) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
     > * {
       + * {
         margin-top: 1rem;
@@ -214,6 +332,10 @@
       font-family: $ff-TheanoDidot;
       font-size: 1.6rem;
       line-height: 2.44;
+
+      @include media-breakpoint-between(md, lg) {
+        font-size: 1.4rem;
+      }
     }
 
     .with-star {

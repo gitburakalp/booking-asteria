@@ -10,8 +10,6 @@ $input-focus-border-color: $colors-border-color;
 $input-focus-box-shadow: none;
 $input-border-radius: 0.6rem;
 
-$xlContainerMaxW: 117.7rem;
-
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -21,11 +19,4 @@ $grid-breakpoints: (
   1280: 1280px,
   1440: 1440px,
   1600: 1600px,
-) !default;
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: $xlContainerMaxW,
-  xl: $xlContainerMaxW,
 ) !default;

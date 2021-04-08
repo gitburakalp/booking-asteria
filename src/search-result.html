@@ -12,57 +12,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/jin2fry.css" />
   </head>
   <body class="has-search">
-    <header class="header">
-      <div class="container">
-        <div class="header-block">
-          <div class="row align-items-lg-center">
-            <div class="col-lg-auto header-logo-column">
-              <div class="header-logo">
-                <a href="/" class="navbar-brand">
-                  <img
-                    src="https://cdn.zeplin.io/601a529e1d0b7321e6fcd84e/assets/6905C8B4-D3F5-473F-996C-88293B621106.png"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-lg">
-              <div class="booking-steps">
-                <div class="booking-steps-item room-selection is-active">
-                  <a href="#" class="booking-steps-link">
-                    ROOM SELECTION <i class="icons icons--check"></i
-                  ></a>
-                </div>
-                <div class="booking-steps-item transfer-selection">
-                  <a href="#" class="booking-steps-link"
-                    >TRANSFER SELECTION <i class="icons icons--check"></i
-                  ></a>
-                </div>
-                <div class="booking-steps-item guest-information">
-                  <a href="#" class="booking-steps-link"
-                    >GUEST INFORMATION <i class="icons icons--check"></i
-                  ></a>
-                </div>
-                <div class="booking-steps-item payment">
-                  <a href="#" class="booking-steps-link"
-                    >PAYMENT <i class="icons icons--check"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-auto ml-auto">
-              <a href="/search-result.html" class="btn btn-primary btn--book-now">
-                BOOK NOW <i class="icons icons--arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <header class="header"></header>
 
     <main class="main">
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col-12 col-xl-9">
+          <div class="col-12 content-column">
             <div class="search-steps">
               <div class="search-steps__title-block">
                 <h2 class="title--lg">ROOM SELECTION</h2>
@@ -211,8 +166,17 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-xl-3">
+          <div class="col-12 col-xl">
             <div class="reservation-summary">
+              <i class="icons icons--times close-btn"></i>
+              <div class="reservation-budget">
+                <div class="row no-gutters">
+                  <div class="col text-right">
+                    <h3 class="description">Total Budget</h3>
+                    <h2 class="title--lg">4,300 EUR</h2>
+                  </div>
+                </div>
+              </div>
               <div class="reservation-summary-block">
                 <div class="reservation-summary-title-block">
                   <h4 class="title--2xl">Reservation Summary</h4>
@@ -220,12 +184,12 @@
                 <div class="reservation-summary-details">
                   <div class="row">
                     <div class="col-6 text-center">
-                      <h4 class="title--2xs text-color--clay-brown">Check-in</h4>
-                      <h4 class="title--2xs text-color--brownish-grey mt-2">1 Apr 2021 Thu.</h4>
+                      <h4 class="title--xs text-color--clay-brown">Check-in</h4>
+                      <h4 class="title--xs text-color--brownish-grey mt-2">1 Apr 2021 Thu.</h4>
                     </div>
                     <div class="col-6 text-center">
-                      <h4 class="title--2xs text-color--clay-brown">Check-out</h4>
-                      <h4 class="title--2xs text-color--brownish-grey mt-2">10 Apr 2021 Sat.</h4>
+                      <h4 class="title--xs text-color--clay-brown">Check-out</h4>
+                      <h4 class="title--xs text-color--brownish-grey mt-2">10 Apr 2021 Sat.</h4>
                     </div>
                   </div>
                   <div class="bordered-box">
@@ -366,7 +330,7 @@
                 <div class="row">
                   <div class="col-12">
                     <p class="description--md">
-                      © 2021 Selectum Hotels & Resort<br />
+                      © 2021 Asteria Hotels<br />
                       Tüm hakları saklıdır.
                     </p>
                   </div>
@@ -378,45 +342,7 @@
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-block">
-          <div class="row align-items-lg-center">
-            <div class="col-lg">
-              <p class="copyright-text ml-lg-4">
-                © 2021 Selectum Hotels & Resort / Tüm hakları saklıdır.
-              </p>
-            </div>
-            <div class="col-lg-auto ml-auto text-right">
-              <p class="footer-description">
-                Rezervasyonunuzu<br />
-                bizi arayarak yapabilirsiniz.
-              </p>
-            </div>
-            <div class="col-lg-auto">
-              <a href="tel:+902427224200" class="btn btn-primary">
-                <i class="icons icons--phone"></i>
-                +90 (242) 722 42 00
-              </a>
-            </div>
-            <div class="col-lg-auto">
-              <div class="language-btn">
-                TR
-
-                <div class="language-list">
-                  <ul>
-                    <li>TR</li>
-                    <li>EN</li>
-                    <li>DE</li>
-                    <li>RU</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="footer"></footer>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

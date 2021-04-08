@@ -25,7 +25,7 @@
 
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: stretch;
     padding: 0;
     border-color: rgba(#c2c2c2, 0.5);
 
@@ -42,6 +42,10 @@
       padding-right: $spacing;
       padding-top: $spacingY;
       padding-bottom: $spacingY;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &.to {
         border-left: 1px solid rgba(#c2c2c2, 0.5);
@@ -63,6 +67,6 @@
   }
 
   &.bg--light-pink {
-    border-color: $colors-secondary-light;
+    border-color: $colors-secondary;
   }
 }

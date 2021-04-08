@@ -1,13 +1,21 @@
 %title {
   font-family: $ff-TheanoDidot;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.47;
   color: $black;
 }
 
 .title {
   @extend %title;
-  font-size: 2rem;
+  font-size: 1.8rem;
+
+  @include media-breakpoint-between(md, lg) {
+    font-size: 1.4rem !important;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2rem;
+  }
 
   &.border-bottom-dashed {
     display: inline-block;
@@ -15,13 +23,10 @@
     border-bottom: 1px dashed rgba($colors-border-color, 0.125);
   }
 
-  &--2xs {
-    @extend %title;
-    font-size: 1.2rem;
-  }
-
   &--xs {
     @extend %title;
+
+    font-size: 1.2rem;
   }
 
   &--sm {
@@ -44,11 +49,19 @@
   &--xl {
     @extend %title;
 
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 2.4rem;
+    }
   }
 
   &--2xl {
     @extend %title;
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 2rem;
+    }
 
     font-size: 2.6rem;
   }
@@ -67,7 +80,11 @@
 
   &--lg {
     @extend .description;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -85,6 +102,10 @@
 }
 
 .text-color {
+  &--black {
+    color: $colors-black !important;
+  }
+
   &--clay-brown {
     color: $colors-secondary-dark !important;
   }
