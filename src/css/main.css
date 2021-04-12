@@ -13020,6 +13020,16 @@ body:not(.has-search) .row--main > *:nth-child(2) {
   flex-direction: column;
   justify-content: center;
 }
+@media (min-width: 1200px) {
+  body:not(.has-search) .row--main .form-row--inner {
+    margin-left: -1.4rem;
+    margin-right: -1.4rem;
+  }
+  body:not(.has-search) .row--main .form-row--inner > * {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+}
 @media (max-width: 767.98px) {
   body.has-search .row--main .row--inner {
     max-width: 100vw;
@@ -13596,8 +13606,8 @@ body.has-search .search-form.is-shown + * {
 }
 @media (min-width: 1200px) {
   .header .btn.book-now {
-    padding-left: 2.5rem;
-    padding-right: 2.36rem;
+    padding-left: 3.9rem;
+    padding-right: 3.9rem;
     line-height: 2.85;
   }
   .header .btn.book-now .icons {

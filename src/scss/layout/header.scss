@@ -6,6 +6,20 @@ body {
         flex-direction: column;
         justify-content: center;
       }
+
+      @include media-breakpoint-up(xl) {
+        .form-row--inner {
+          $gap: 2.8 / 2 + rem;
+
+          margin-left: -$gap;
+          margin-right: -$gap;
+
+          > * {
+            padding-left: $gap;
+            padding-right: $gap;
+          }
+        }
+      }
     }
   }
 
@@ -712,8 +726,8 @@ body {
       }
 
       @include media-breakpoint-up(xl) {
-        padding-left: 2.5rem;
-        padding-right: 2.36rem;
+        padding-left: 3.9rem;
+        padding-right: 3.9rem;
         line-height: 2.85;
 
         .icons {
