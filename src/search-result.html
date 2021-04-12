@@ -12,7 +12,286 @@
     <link rel="stylesheet" href="https://use.typekit.net/jin2fry.css" />
   </head>
   <body class="has-search">
-    <header class="header"></header>
+    <header class="header">
+      <div class="header-container container">
+        <div class="row row--main">
+          <div class="col-md-auto brand-column">
+            <div class="brand">
+              <a href="#" class="brand-link">
+                <img src="images/svg/asteria-logo.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-row form-row--inner search-form mb-4 mb-md-0">
+              <div class="col-12 col-md-3">
+                <div class="header-select">
+                  <div class="icon-block">
+                    <i class="icons icons--hotels"></i>
+                  </div>
+                  <input id="inpSelectedHotel" type="text" placeholder="Hotel" readonly />
+                  <div class="icon-block">
+                    <i class="icons icons--dropdown"></i>
+                  </div>
+                  <div class="header-popover with-row-border hotel-select">
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inpHotel1" type="radio" name="hotelSelect" hidden />
+                          <label for="inpHotel1" class="no-check">Asteria Kremlin Palace</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inpHotel2" type="radio" name="hotelSelect" hidden />
+                          <label for="inpHotel2" class="no-check">Asteria Kemer Resort</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inpHotel3" type="radio" name="hotelSelect" hidden />
+                          <label for="inpHotel3" class="no-check">Asteria Bodrum Resort</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inpHotel4" type="radio" name="hotelSelect" hidden />
+                          <label for="inpHotel4" class="no-check">Asteria Zeus Didim</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-3">
+                <div class="header-select">
+                  <div class="icon-block">
+                    <i class="icons icons--calendar"></i>
+                  </div>
+                  <input type="text" class="datepicker" placeholder="Checkin" readonly />
+                  <div class="icon-block">
+                    <i class="icons icons--dropdown"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-3">
+                <div class="header-select">
+                  <div class="icon-block">
+                    <i class="icons icons--adults"></i>
+                  </div>
+                  <input type="text" placeholder="Adults" readonly />
+                  <div class="icon-block">
+                    <i class="icons icons--dropdown"></i>
+                  </div>
+                  <div class="header-popover adults-and-childs">
+                    <div class="form-row align-items-center" data-max="8">
+                      <div class="col-auto">
+                        <span id="adultCount">1</span>
+                      </div>
+                      <div class="col">
+                        <p class="ml-3">Adults</p>
+                      </div>
+                      <div class="col-auto">
+                        <a role="button" tabindex="0" class="minus-plus-buttons plus">
+                          <i class="icons icons--plus-circle"></i>
+                        </a>
+                        <a role="button" tabindex="0" class="minus-plus-buttons minus">
+                          <i class="icons icons--minus-circle"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="form-row align-items-center" data-max="3">
+                      <div class="col-auto">
+                        <span id="childCount">0</span>
+                      </div>
+                      <div class="col">
+                        <p class="ml-3">Childs</p>
+                      </div>
+                      <div class="col-auto">
+                        <a role="button" tabindex="0" class="minus-plus-buttons plus">
+                          <i class="icons icons--plus-circle"></i>
+                        </a>
+                        <a role="button" tabindex="0" class="minus-plus-buttons minus">
+                          <i class="icons icons--minus-circle"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="form-row child-row d-none">
+                      <div class="col-4 child-1 d-none">
+                        <select class="form-control">
+                          <option>Select</option>
+                        </select>
+                      </div>
+                      <div class="col-4 child-2 d-none">
+                        <select class="form-control">
+                          <option>Select</option>
+                        </select>
+                      </div>
+                      <div class="col-4 child-3 d-none">
+                        <select class="form-control">
+                          <option>Select</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-3">
+                <div class="header-select">
+                  <div class="icon-block">
+                    <i class="icons icons--flight"></i>
+                  </div>
+                  <input type="text" placeholder="Flight" readonly />
+                  <div class="icon-block">
+                    <i class="icons icons--dropdown"></i>
+                  </div>
+                  <div class="header-popover header-popover-flight">
+                    <div class="form-row text-center">
+                      <div class="col-12">
+                        <h3 class="title--lg">Flight Selection</h3>
+                        <hr />
+                        <p class="description">
+                          The flight options that best suit your accommodation preferences are now a
+                          click away.
+                        </p>
+                        <p class="description--md mb-4">Experience now!</p>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-12 col-md-6">
+                        <h5 class="title--xs">Specify where you want to come from.</h5>
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <h5 class="title--xs">Specify where you want to go.</h5>
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <h5 class="title--xs">Flight classes</h5>
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inp1" type="checkbox" />
+                          <label for="inp1">
+                            My arrival or departure flight dates are different from my arrival
+                            dates.
+                          </label>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
+                    <div id="departureFlightRow" class="form-row">
+                      <div class="col-12 text-center">
+                        <h3 class="title--lg">Departure Flight</h3>
+                        <h6 class="title--xs">From</h6>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inp2" type="checkbox" />
+                          <label for="inp2">I don't want</label>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
+                    <div id="departureFlightRow" class="form-row">
+                      <div class="col-12 text-center">
+                        <h3 class="title--lg">Arrival Flight</h3>
+                        <h6 class="title--xs">From</h6>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <select class="form-control">
+                          <option>Select an option</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <div class="custom-check">
+                          <input id="inp3" type="checkbox" />
+                          <label for="inp3">I don't want</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row mt-3">
+                      <div class="col-12 col-md-7">
+                        <a role="button" class="d-block btn btn-black--transparent">
+                          CONTINUE WITHOUT FLIGHT
+                        </a>
+                      </div>
+                      <div class="col-10 col-md-5 mx-auto">
+                        <a role="button" class="d-block btn btn-primary"> CONTINUE </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row row--inner search-steps-list-row">
+              <div class="col-12">
+                <ul class="search-steps-list">
+                  <li class="search-steps-list-item is-active">
+                    <a href="search-result.html" class="search-steps-list-link"> ROOM SELECTION </a>
+                  </li>
+                  <li class="search-steps-list-item">
+                    <a href="transfer-selection.html" class="search-steps-list-link">
+                      TRANSFER SELECTION
+                    </a>
+                  </li>
+                  <li class="search-steps-list-item">
+                    <a href="guests-information.html" class="search-steps-list-link">
+                      GUEST INFORMATION
+                    </a>
+                  </li>
+                  <li class="search-steps-list-item">
+                    <a href="payment.html" class="search-steps-list-link"> PAYMENT </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto ml-auto align-self-center col-xl-3">
+            <a href="#" class="btn book-now"> BOOK NOW <i class="icons icons--long-arrow"></i> </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main class="main">
       <div class="container">
@@ -301,7 +580,7 @@
                     </div>
                     <div class="col-12">
                       <a
-                        href="transfer-selection.html"
+                        href="payment.html"
                         class="btn--continue btn btn-primary d-flex align-items-center justify-content-center"
                       >
                         CONTINUE
@@ -342,7 +621,36 @@
       </div>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer-container text-center text-md-left">
+        <div class="form-row">
+          <div class="col-12 col-md-auto order-md-4 align-self-md-center">
+            <div class="language-button">
+              TR
+              <i class="icons icons--dropdown mr-0"></i>
+            </div>
+          </div>
+          <div class="col-12 col-md-auto order-md-3">
+            <a href="tel:+902427224200" role="button" tabindex="0" class="btn call-you btn-primary">
+              <i class="icons icons--phone"></i>
+              +90 (242) 722 42 00
+            </a>
+          </div>
+          <div class="col-12 col-md-auto order-md-2 text-md-right">
+            <p class="description font-italic">
+              Rezervasyonunuzu <br />
+              bizi arayarak yapabilirsiniz.
+            </p>
+          </div>
+          <div class="col-12 col-md order-md-1 align-self-md-end align-self-xl-center">
+            <p class="description--sm">
+              © 2021 Asteria Hotels<br class="d-md-none" />
+              Tüm hakları saklıdır.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

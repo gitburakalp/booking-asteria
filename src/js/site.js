@@ -309,15 +309,15 @@ document.addEventListener('DOMContentLoaded', function () {
   //loading htmlComponents -> purehtml
 
   $('header').each(function () {
-    $(this).load('html-components/header.html');
+    $(this).load('./html-components/header.html');
   });
 
   $('.reservation-summary').each(function () {
-    $(this).load('html-components/reservation-summary.html');
+    $(this).load('./html-components/reservation-summary.html');
   });
 
   $('footer').each(function () {
-    !hasSearch ? $(this).load('html-components/footer.html') : '';
+    !hasSearch ? $(this).load('./html-components/footer.html') : '';
   });
 });
 
@@ -333,10 +333,6 @@ window.onload = function () {
 
   $('.edit-button').on('click', function () {
     $('.search-form').toggleClass('is-shown');
-  });
-
-  $('.btn-primary').each(function () {
-    $(this).attr('href', $('.btn--continue').attr('href')); //remove line on live
   });
 
   setHeaderFooterHeights();
@@ -369,6 +365,7 @@ window.onload = function () {
     });
   });
 
+  //remove line on live. fake search results data
   for (let i = 1; i < 6; i++) {
     $('.search-steps__results').append(
       "<div class='room-cards'>" + $('.room-cards').html() + '</div>',

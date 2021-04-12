@@ -14914,7 +14914,7 @@ input {
   border: 1px solid rgba(254, 210, 159, 0.5);
   border-radius: 50%;
   background-position: center;
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) and (max-width: 1199.98px) {
