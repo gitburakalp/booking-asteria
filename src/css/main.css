@@ -13506,10 +13506,10 @@ body.has-search .search-form.is-shown + * {
   border-color: #fed29f;
 }
 .header-select:not(.is-selected):after {
-  background-image: url("../../images/svg/select-circle.svg");
+  background-image: url("../images/svg/select-circle.svg");
 }
 .header-select.is-selected:after {
-  background-image: url("../../images/svg/selected-circle.svg");
+  background-image: url("../images/svg/selected-circle.svg");
 }
 .header-select input + .icon-block {
   min-width: auto;
@@ -13938,7 +13938,7 @@ img {
   padding-bottom: 0.35rem;
   padding-left: 0.75rem;
   padding-right: 1.325rem;
-  background-image: url("../../images/svg/select--yellow.svg");
+  background-image: url("../images/svg/select--yellow.svg");
   background-position: calc(100% - (0.6rem));
   background-size: 0.6rem;
   background-repeat: no-repeat;
@@ -14091,7 +14091,7 @@ input {
   max-height: 0px;
 }
 .select-box:not(.is-active):after {
-  background-image: url("../../images/svg/select-circle.svg");
+  background-image: url("../images/svg/select-circle.svg");
 }
 .select-box:hover {
   border-color: #fed29f;
@@ -14100,7 +14100,7 @@ input {
   border-color: #fed29f;
 }
 .select-box.is-active:after, .select-box.has-value:after {
-  background-image: url("../../images/svg/selected-circle.svg");
+  background-image: url("../images/svg/selected-circle.svg");
 }
 .select-box > input {
   display: block;
@@ -14264,33 +14264,33 @@ input {
 .icons--hotels {
   width: 2rem;
   height: 1.8rem;
-  background-image: url("../../images/svg/hotel-icon.svg");
+  background-image: url("../images/svg/hotel-icon.svg");
 }
 .icons--calendar {
   width: 1.7rem;
   height: 1.9rem;
-  background-image: url("../../images/svg/calendar-icon.svg");
+  background-image: url("../images/svg/calendar-icon.svg");
 }
 .icons--dropdown {
   width: 0.6rem;
   height: 0.6rem;
-  background-image: url("../../images/svg/select--yellow.svg");
+  background-image: url("../images/svg/select--yellow.svg");
   margin-right: 1rem;
 }
 .icons--adults {
   width: 1.5rem;
   height: 2rem;
-  background-image: url("../../images/svg/adult-icon.svg");
+  background-image: url("../images/svg/adult-icon.svg");
 }
 .icons--flight {
   width: 2.5rem;
   height: 1.5rem;
-  background-image: url("../../images/svg/flight-icon.svg");
+  background-image: url("../images/svg/flight-icon.svg");
 }
 .icons--long-arrow {
   width: 3rem;
   height: 2.2rem;
-  background-image: url("../../images/svg/long-arrow.svg");
+  background-image: url("../images/svg/long-arrow.svg");
 }
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .icons--long-arrow {
@@ -14301,18 +14301,18 @@ input {
 .icons--minus-circle {
   width: 2.1rem;
   height: 2.1rem;
-  background-image: url("../../images/svg/minus-circle.svg");
+  background-image: url("../images/svg/minus-circle.svg");
 }
 .icons--plus-circle {
   width: 2.1rem;
   height: 2.1rem;
-  background-image: url("../../images/svg/plus-circle.svg");
+  background-image: url("../images/svg/plus-circle.svg");
 }
 .icons--phone {
   width: 2.1rem;
   height: 2.1rem;
   margin-right: 0.5rem;
-  background-image: url("../../images/svg/phone-icon.svg");
+  background-image: url("../images/svg/phone-icon.svg");
 }
 .icons--info-circle {
   width: 1.6rem;
@@ -14866,7 +14866,7 @@ input {
   max-width: 100%;
 }
 .search-steps-list > *.is-active > *:after, .search-steps-list > *.is-past > *:after {
-  background-image: url("../../images/svg/selected-circle.svg");
+  background-image: url("../images/svg/selected-circle.svg");
 }
 .search-steps-list > * + * {
   margin-left: 3.6rem;
@@ -15085,7 +15085,7 @@ input {
   transform: translate(-50%, -50%);
   width: 2.4rem;
   height: 2.4rem;
-  background-image: url("../../images/svg/right-arrow-bg-white.svg");
+  background-image: url("../images/svg/right-arrow-bg-white.svg");
 }
 @media (max-width: 767.98px) {
   .search-steps__banner .transfers-block, .search-steps__banner .transfers-block--bordered {
@@ -15117,7 +15117,7 @@ input {
     left: 3.2rem;
     width: 1.7rem;
     height: 1.3rem;
-    background-image: url("../../images/svg/long-arrow--yellow.svg");
+    background-image: url("../images/svg/long-arrow--yellow.svg");
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -15178,7 +15178,7 @@ input {
     right: 1.4rem;
     width: 3rem;
     height: 3rem;
-    background-image: url("../../images/svg/times--white.svg");
+    background-image: url("../images/svg/times--white.svg");
     filter: drop-shadow(0 0 1px rgba(3, 3, 3, 0.5));
   }
   .reservation-summary.is-shown .reservation-summary-block {
@@ -15503,7 +15503,7 @@ input {
     top: 50%;
     left: 0;
     transform: translate(calc(-100% - 0.5rem), -50%);
-    background-image: url("../../images/svg/right-arrow-bordered.svg");
+    background-image: url("../images/svg/right-arrow-bordered.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -15612,7 +15612,7 @@ input {
   height: 0.93rem;
   margin-right: 0.23rem;
   vertical-align: -0.125rem;
-  background-image: url("../../images/svg/radio-circle.svg");
+  background-image: url("../images/svg/radio-circle.svg");
   background-repeat: no-repeat;
   background-size: 0.93rem 0.93rem;
 }
@@ -15626,7 +15626,7 @@ input {
   }
 }
 .select-transfer-item input:checked + label::before {
-  background-image: url("../../images/svg/radio-check.svg");
+  background-image: url("../images/svg/radio-check.svg");
 }
 
 .transfers-from-to {
@@ -15640,7 +15640,7 @@ input {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("../../images/svg/right-arrow-bg-white.svg");
+  background-image: url("../images/svg/right-arrow-bg-white.svg");
   width: 2.4rem;
   height: 2.4rem;
   z-index: 9;
@@ -15713,7 +15713,7 @@ input {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 .transfers-check input:checked + label::before {
-  background-image: url("../../images/svg/check.svg");
+  background-image: url("../images/svg/check.svg");
   background-size: 90%;
   background-position: center center;
 }
@@ -15754,7 +15754,7 @@ input {
   border-radius: 50%;
 }
 .booking-steps > *.is-active .icons--check, .booking-steps > *.is-past .icons--check {
-  background-image: url("../../images/svg/selected-circle.svg");
+  background-image: url("../images/svg/selected-circle.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 92.5%;
@@ -15835,7 +15835,7 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("../../images/svg/right-arrow-bordered.svg");
+  background-image: url("../images/svg/right-arrow-bordered.svg");
 }
 .bordered-box.bg--light-pink {
   border-color: #fff1e2;

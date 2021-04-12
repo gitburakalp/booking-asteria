@@ -10,7 +10,7 @@
   padding-left: 0.75rem;
   padding-right: 1.325rem;
 
-  background-image: url('../../images/svg/select--yellow.svg');
+  background-image: url($imageSrc + '/svg/select--yellow.svg');
   background-position: calc(100% - (0.6rem));
   background-size: 0.6rem;
   background-repeat: no-repeat;

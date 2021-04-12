@@ -16,7 +16,7 @@
       &.is-past {
         > * {
           &:after {
-            background-image: url('../../images/svg/selected-circle.svg');
+            background-image: url($imageSrc + '/svg/selected-circle.svg');
           }
         }
       }
@@ -278,7 +278,7 @@
         transform: translate(-50%, -50%);
         width: 2.4rem;
         height: 2.4rem;
-        background-image: url('../../images/svg/right-arrow-bg-white.svg');
+        background-image: url($imageSrc + '/svg/right-arrow-bg-white.svg');
         @extend %bgContainCenteredImage;
       }
 

@@ -606,13 +606,13 @@ body {
 
     &:not(.is-selected) {
       &:after {
-        background-image: url('../../images/svg/select-circle.svg');
+        background-image: url($imageSrc + '/svg/select-circle.svg');
       }
     }
 
     &.is-selected {
       &:after {
-        background-image: url('../../images/svg/selected-circle.svg');
+        background-image: url($imageSrc + '/svg/selected-circle.svg');
       }
     }
 

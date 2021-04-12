@@ -68,7 +68,7 @@
     }
 
     &:after {
-      background-image: url('../../images/svg/select-circle.svg');
+      background-image: url($imageSrc + '/svg/select-circle.svg');
     }
   }
 
@@ -81,7 +81,7 @@
     border-color: $colors-secondary;
 
     &:after {
-      background-image: url('../../images/svg/selected-circle.svg');
+      background-image: url($imageSrc + '/svg/selected-circle.svg');
     }
   }
 
@@ -95,7 +95,7 @@
     border: none;
     padding-right: 0.7rem;
     line-height: 2;
-    // background-image: url('../../images/svg/select--yellow.svg');
+    // background-image: url($imageSrc + '/svg/select--yellow.svg');
     // background-position: calc(100% - (0.6rem + 0.7rem));
     // background-size: 0.6rem;
     // background-repeat: no-repeat;

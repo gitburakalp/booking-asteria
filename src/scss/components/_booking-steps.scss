@@ -39,7 +39,7 @@
     &.is-active,
     &.is-past {
       .icons--check {
-        background-image: url('../../images/svg/selected-circle.svg');
+        background-image: url($imageSrc + '/svg/selected-circle.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 92.5%;

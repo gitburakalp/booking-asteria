@@ -13,7 +13,7 @@
       left: 1.1rem +2.1rem;
       width: 1.7rem;
       height: 1.3rem;
-      background-image: url('../../images/svg/long-arrow--yellow.svg');
+      background-image: url($imageSrc + '/svg/long-arrow--yellow.svg');
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -79,7 +79,7 @@
         right: 1.4rem;
         width: 3rem;
         height: 3rem;
-        background-image: url('../../images/svg/times--white.svg');
+        background-image: url($imageSrc + '/svg/times--white.svg');
         filter: drop-shadow(0 0 1px rgba($colors-black, 0.5));
       }
 

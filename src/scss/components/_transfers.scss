@@ -45,7 +45,7 @@
             top: 50%;
             left: 0;
             transform: translate(calc(-100% - 0.5rem), -50%);
-            background-image: url('../../images/svg/right-arrow-bordered.svg');
+            background-image: url($imageSrc + '/svg/right-arrow-bordered.svg');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -173,7 +173,7 @@
           height: $width;
           margin-right: 0.23rem;
           vertical-align: -0.125rem;
-          background-image: url('../../images/svg/radio-circle.svg');
+          background-image: url($imageSrc + '/svg/radio-circle.svg');
           background-repeat: no-repeat;
           background-size: $width $width;
 
@@ -192,7 +192,7 @@
       &:checked {
         + label {
           &::before {
-            background-image: url('../../images/svg/radio-check.svg');
+            background-image: url($imageSrc + '/svg/radio-check.svg');
           }
         }
       }
@@ -209,7 +209,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('../../images/svg/right-arrow-bg-white.svg');
+    background-image: url($imageSrc + '/svg/right-arrow-bg-white.svg');
     width: 2.4rem;
     height: 2.4rem;
     @extend %bgContainCenteredImage;
@@ -291,7 +291,7 @@
     &:checked {
       + label {
         &::before {
-          background-image: url('../../images/svg/check.svg');
+          background-image: url($imageSrc + '/svg/check.svg');
           @extend %noRepeatImage;
           background-size: 90%;
           background-position: center center;
