@@ -13,7 +13,7 @@
 
   background-color: transparent;
   border: none;
-  z-index: 101;
+  z-index: 1004;
 
   @include media-breakpoint-down(sm) {
     &.daily-rates {
@@ -42,7 +42,7 @@
       right: 0;
       bottom: 0;
       background-color: rgba($black, 0.2);
-      z-index: 100;
+      z-index: 1003;
       animation: shownAnim $duration ease-in;
     }
   }
@@ -57,7 +57,7 @@
 
       &:before,
       &:after {
-        border-bottom-color: $colors-secondary;
+        border-bottom-color: $colors-secondary-300;
         border-width: 0 1rem 1rem 1rem;
       }
     }
@@ -77,7 +77,7 @@
       }
 
       &::after {
-        border-top-color: $colors-secondary;
+        border-top-color: $colors-secondary-300;
         border-width: 1rem 1rem 0;
       }
     }
@@ -89,7 +89,7 @@
     font-weight: normal;
     line-height: 1.29;
     padding: 1rem;
-    background-color: $colors-secondary;
+    background-color: $colors-secondary-300;
     color: $black;
     border-radius: 0.6rem;
 
@@ -107,7 +107,7 @@
           right: 0;
           cursor: pointer;
           transform: translate(40%, -40%);
-          background-color: $colors-secondary;
+          background-color: $colors-secondary-300;
           width: 3rem;
           height: 3rem;
           background-image: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 512 512'%3E%3Cpath d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'%3E%3C/path%3E%3C/svg%3E");

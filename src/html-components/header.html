@@ -1,5 +1,5 @@
-<div class="header-container">
-  <div class="form-row form-row--main">
+<div class="header-container container">
+  <div class="row row--main">
     <div class="col-md-auto brand-column">
       <div class="brand">
         <a href="#" class="brand-link">
@@ -7,14 +7,14 @@
         </a>
       </div>
     </div>
-    <div class="col-md align-self-md-center">
-      <div class="form-row form-row--inner">
-        <div class="col-md-3">
+    <div class="col-md">
+      <div class="form-row form-row--inner search-form mb-4 mb-md-0">
+        <div class="col-12 col-md-3">
           <div class="header-select">
             <div class="icon-block">
               <i class="icons icons--hotels"></i>
             </div>
-            <input id="inpSelectedHotel" type="text" placeholder="Select Hotel" readonly />
+            <input id="inpSelectedHotel" type="text" placeholder="Hotel" readonly />
             <div class="icon-block">
               <i class="icons icons--dropdown"></i>
             </div>
@@ -54,23 +54,23 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-12 col-md-3">
           <div class="header-select">
             <div class="icon-block">
               <i class="icons icons--calendar"></i>
             </div>
-            <input type="text" class="datepicker" placeholder="Checkin / Checkout" readonly />
+            <input type="text" class="datepicker" placeholder="Checkin" readonly />
             <div class="icon-block">
               <i class="icons icons--dropdown"></i>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-12 col-md-3">
           <div class="header-select">
             <div class="icon-block">
               <i class="icons icons--adults"></i>
             </div>
-            <input type="text" placeholder="Adults Children" readonly />
+            <input type="text" placeholder="Adults" readonly />
             <div class="icon-block">
               <i class="icons icons--dropdown"></i>
             </div>
@@ -127,12 +127,12 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-12 col-md-3">
           <div class="header-select">
             <div class="icon-block">
               <i class="icons icons--flight"></i>
             </div>
-            <input type="text" placeholder="Flight Select" readonly />
+            <input type="text" placeholder="Flight" readonly />
             <div class="icon-block">
               <i class="icons icons--dropdown"></i>
             </div>
@@ -145,7 +145,7 @@
                     The flight options that best suit your accommodation preferences are now a click
                     away.
                   </p>
-                  <p class="description--md">Experience now!</p>
+                  <p class="description--md mb-4">Experience now!</p>
                 </div>
               </div>
               <div class="form-row">
@@ -232,13 +232,13 @@
                   </div>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="col-12">
+              <div class="form-row mt-3">
+                <div class="col-12 col-md-7">
                   <a role="button" class="d-block btn btn-black--transparent">
                     CONTINUE WITHOUT FLIGHT
                   </a>
                 </div>
-                <div class="col-10 mx-auto">
+                <div class="col-10 col-md-5 mx-auto">
                   <a role="button" class="d-block btn btn-primary"> CONTINUE </a>
                 </div>
               </div>
@@ -246,11 +246,32 @@
           </div>
         </div>
       </div>
+
+      <div class="row row--inner search-steps-list-row">
+        <div class="col-12">
+          <ul class="search-steps-list">
+            <li class="search-steps-list-item is-active">
+              <a href="search-result.html" class="search-steps-list-link"> ROOM SELECTION </a>
+            </li>
+            <li class="search-steps-list-item">
+              <a href="transfer-selection.html" class="search-steps-list-link">
+                TRANSFER SELECTION
+              </a>
+            </li>
+            <li class="search-steps-list-item">
+              <a href="guests-information.html" class="search-steps-list-link">
+                GUEST INFORMATION
+              </a>
+            </li>
+            <li class="search-steps-list-item">
+              <a href="payment.html" class="search-steps-list-link"> PAYMENT </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-auto">
-      <a href="search-result.html" class="btn book-now">
-        BOOK NOW <i class="icons icons--long-arrow"></i>
-      </a>
+    <div class="col-auto ml-auto align-self-center col-xl-3">
+      <a href="#" class="btn book-now"> BOOK NOW <i class="icons icons--long-arrow"></i> </a>
     </div>
   </div>
 </div>

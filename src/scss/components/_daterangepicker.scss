@@ -108,11 +108,23 @@
         width: auto;
       }
 
+      th {
+        &:nth-child(1) {
+          width: 2.2rem;
+        }
+
+        &[colspan] {
+          width: calc(2.2rem * 5);
+        }
+      }
+
       td,
       th {
         margin: 1rem;
         font-weight: 400;
+      }
 
+      td {
         @include media-breakpoint-up(md) {
           .day {
             min-width: 2.2rem;
@@ -126,8 +138,11 @@
         margin: 0.5rem;
         font-size: 1.26rem;
         letter-spacing: -0.034rem;
-        line-height: 1.95;
+        line-height: 1.8;
         border-radius: 50%;
+
+        min-width: 2.2rem;
+        width: 2.2rem;
 
         &.real-today {
           background-color: $colors-secondary;
@@ -142,7 +157,7 @@
         &.checked,
         &.hovering {
           background-color: rgba($colors-secondary, 0.5) !important;
-          color: $white;
+          color: $colors-black !important;
         }
 
         &.first-date-selected,

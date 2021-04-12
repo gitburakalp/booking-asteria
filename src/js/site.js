@@ -273,7 +273,7 @@ function setRadioListTabs() {
         var dataId = $this.prev().data('id');
         var activeCss = 'is-active';
 
-        $('.radio-lists-item').removeClass(activeCss);
+        $('.radio-lists > *').removeClass(activeCss);
         $this.closest('.radio-lists-item').addClass(activeCss);
 
         $('.radio-lists-contents > *').removeClass(activeCss);
@@ -288,11 +288,11 @@ function setRadioListTabs() {
 }
 
 function isOwnHeaderSelectClicked(evt, selfObj) {
-  return (
-    selfObj.contains(evt.target) ||
-    evt.target == selfObj ||
-    (selfObj.childNodes != undefined && $.inArray(evt.target, selfObj.childNodes) >= 0)
-  );
+  return selfObj != undefined
+    ? selfObj.contains(evt.target) ||
+        evt.target == selfObj ||
+        (selfObj.childNodes != undefined && $.inArray(evt.target, selfObj.childNodes) >= 0)
+    : false;
 }
 
 function outsideClickClose(evt) {
@@ -309,11 +309,11 @@ document.addEventListener('DOMContentLoaded', function () {
   //loading htmlComponents -> purehtml
 
   $('header').each(function () {
-    var headerComponent = hasSearch
-      ? 'html-components/header-search.html'
-      : 'html-components/header.html';
+    $(this).load('html-components/header.html');
+  });
 
-    $(this).load(headerComponent);
+  $('.reservation-summary').each(function () {
+    $(this).load('html-components/reservation-summary.html');
   });
 
   $('footer').each(function () {
@@ -324,8 +324,17 @@ document.addEventListener('DOMContentLoaded', function () {
 window.onload = function () {
   $('body').addClass('is-loaded');
 
+  if ($('body').hasClass('has-search')) {
+    $('header').find('.btn.book-now').addClass('edit-button');
+    $('header').find('.btn.book-now').html('EDIT  <i class="icons icons--long-arrow"></i>'); //remove line on live!
+  }
+
+  $('.edit-button').on('click', function () {
+    $('.search-form').toggleClass('is-shown');
+  });
+
   $('.btn-primary').each(function () {
-    $(this).attr('href', $('.btn--continue').attr('href'));
+    $(this).attr('href', $('.btn--continue').attr('href')); //remove line on live
   });
 
   setHeaderFooterHeights();
@@ -334,16 +343,19 @@ window.onload = function () {
   setRadioListTabs();
 
   $('.hotel-select').each(function () {
-    $('input[type=radio]').change(function () {
-      var $this = $(this);
+    $(this)
+      .find('input[type=radio]')
+      .change(function () {
+        var $this = $(this);
 
-      $('.hotel-select .custom-check').removeClass('is-active');
-      $this.parent().addClass('is-active');
-      $this.closest('.header-select').find('#inpSelectedHotel').val($this.next().text());
-    });
+        $('.hotel-select .custom-check').removeClass('is-active');
+        $this.parent().addClass('is-active');
+        $this.closest('.header-select').find('#inpSelectedHotel').val($this.next().text());
+        $this.closest('.header-select').removeClass('is-active');
+      });
   });
 
-  $(document).on('click.header-select', outsideClickClose);
+  $(document).on('touchstart.header-select,click.header-select', outsideClickClose);
 
   $('.header').each(function () {
     $('.is-active').each(function () {

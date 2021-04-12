@@ -73,7 +73,7 @@
         border: 1px solid rgba($colors-secondary, 0.5);
         border-radius: 50%;
         background-position: center;
-        background-size: 80%;
+        background-size: contain;
         background-repeat: no-repeat;
       }
 
@@ -102,12 +102,6 @@
 
     &__payment {
       max-width: 73.2rem;
-    }
-  }
-
-  @include media-breakpoint-up(1440) {
-    &__transfers {
-      max-width: 94.9rem;
     }
   }
 
@@ -196,10 +190,6 @@
     }
   }
 
-  &__transfers {
-    position: relative;
-  }
-
   &__payment {
     .radio-lists-wrapper {
       .custom-check {
@@ -215,8 +205,8 @@
         background-color: $white;
 
         &.is-active {
-          border-color: $colors-secondary;
-          background-color: $colors-secondary;
+          border-color: $colors-secondary-100;
+          background-color: $colors-secondary-100;
         }
       }
 
@@ -249,5 +239,63 @@
     position: relative;
     border-radius: 0.8rem;
     overflow: hidden;
+
+    margin-bottom: 1.2rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 1.7rem;
+    }
+
+    .transfers-block {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0.9rem;
+      border-top-right-radius: 0.4rem;
+      background-color: $white;
+
+      @include media-breakpoint-down(sm) {
+        .row {
+          margin-left: -10px;
+          margin-right: -10px;
+
+          > * {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 1.2rem 1.3rem;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url('../../images/svg/right-arrow-bg-white.svg');
+        @extend %bgContainCenteredImage;
+      }
+
+      @include media-breakpoint-down(sm) {
+        left: 0.6rem;
+        bottom: 0.6rem;
+        border-radius: 0.4rem;
+
+        .form-control {
+          font-size: 1rem;
+        }
+      }
+
+      .form-control {
+        line-height: 1;
+        border-radius: 0.4rem;
+      }
+    }
   }
 }

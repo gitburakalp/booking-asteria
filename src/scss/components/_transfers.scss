@@ -1,299 +1,301 @@
-$borderColor: rgba(#c2c2c2, 0.3);
+.transfers-block {
+  position: relative;
 
-.transfers {
-  &-select {
-    @include media-breakpoint-up(xl) {
-      .has-after-arrow {
-        + * {
-          &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translate(calc(-100% - 0.6rem), -50%);
-            left: 0;
-            width: 2.4rem;
-            height: 2.4rem;
-            background-image: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' fill='rgba(97,97,97,0.5)' viewBox='0 0 512 512'%3E%3Cpath d='M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zM256 40c118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216zm12.5 92.5l115.1 115c4.7 4.7 4.7 12.3 0 17l-115.1 115c-4.7 4.7-12.3 4.7-17 0l-6.9-6.9c-4.7-4.7-4.7-12.5.2-17.1l85.6-82.5H140c-6.6 0-12-5.4-12-12v-10c0-6.6 5.4-12 12-12h190.3l-85.6-82.5c-4.8-4.7-4.9-12.4-.2-17.1l6.9-6.9c4.8-4.7 12.4-4.7 17.1 0z'%3E%3C/path%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        }
-      }
-    }
-
-    .t_select {
-      &-row {
-        display: flex;
-        flex-wrap: wrap;
-
-        > * {
-          position: relative;
-          min-height: 1px;
-          width: auto;
-          flex: 0 0 auto;
-          max-width: 100%;
-
-          @include media-breakpoint-up(xl) {
-            + * {
-              margin-left: 3.4rem;
-            }
-          }
-
-          @include media-breakpoint-down(lg) {
-            + * {
-              margin-top: 1.5rem;
-            }
-          }
-        }
-      }
-
-      $spacing: 0.7rem;
-
-      &-col {
-        position: relative;
-        border-radius: 0.8rem;
-        padding: $spacing;
-        border: 1px solid rgba(#4b4b4b, 0.5);
-
-        @include media-breakpoint-down(lg) {
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        @include media-breakpoint-up(lg) {
-          padding: $spacing;
-        }
-      }
-
-      &-list {
-        display: flex;
-        flex-wrap: wrap;
-
-        label {
-          font-family: $ff-TheanoDidot;
-          font-size: 1rem !important;
-          color: $colors-brownish-grey !important;
-
-          @include media-breakpoint-up(md) {
-            font-size: 1.4rem !important;
-          }
-        }
-
-        > * {
-          position: relative;
-          min-height: 1px;
-          flex: 0 0 auto;
-          width: auto;
-          max-width: 100%;
-
-          + * {
-            margin-left: 0.5rem;
-          }
-        }
-
-        &-item {
-          border-radius: 0.2rem;
-          border: 1px solid rgba(#4b4b4b, 0.5);
-          padding: 0.1rem 0.27rem;
-
-          @include media-breakpoint-up(lg) {
-            padding: 0.3rem $spacing;
-          }
-        }
-
-        &-link {
-          display: block;
-          position: relative;
-          line-height: 1;
-
-          .custom-check {
-            label {
-              $width: 1rem;
-              padding-left: $width + 0.23rem;
-
-              &:before,
-              &::after {
-                top: calc((1.7rem - #{$width}) / 2);
-
-                @include media-breakpoint-down(sm) {
-                  width: $width;
-                  height: $width;
-                }
-              }
-            }
-          }
-
-          label {
-            line-height: 1.7;
-          }
-        }
-      }
-    }
-  }
-
-  &-list {
+  &.transfer-selection-block {
     display: flex;
     flex-wrap: wrap;
 
+    text-align: center;
+
+    .transfers-block--bordered {
+      display: inline-block;
+    }
+
     > * {
-      position: relative;
       min-height: 1px;
       width: 100%;
       max-width: 100%;
-      $offset: 1rem;
+
+      @include media-breakpoint-down(sm) {
+        + * {
+          margin-top: 1.2rem;
+        }
+      }
 
       @include media-breakpoint-up(md) {
-        $mw: calc((100% - 1rem) / 2);
-
-        flex: 0 0 $mw;
-        max-width: $mw;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
 
         + * {
-          margin-left: auto;
+          margin-left: 1.4rem;
         }
       }
 
       @include media-breakpoint-up(xl) {
-        $offset: 1rem;
-        $mw: calc((100% - (#{$offset} * 2)) / 3);
+        + * {
+          position: relative;
+          margin-left: 3.2rem;
 
-        flex: 0 0 $mw;
-        max-width: $mw;
-
-        &:not(:nth-child(3n + 1)) {
-          margin-left: $offset;
-        }
-
-        &:nth-child(n + 4) {
-          margin-top: $offset;
-        }
-      }
-
-      .image {
-        position: relative;
-        overflow: hidden;
-        border-radius: 0.4rem;
-      }
-    }
-
-    &-item {
-      > input[type='radio'] {
-        position: absolute;
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
-
-        + label {
-          display: block;
-          height: 100%;
-          cursor: pointer;
-          border-radius: 0.8em;
-          transition: box-shadow $duration;
-          box-shadow: (0 0 3px rgba($black, 0));
-
-          &:hover {
-            box-shadow: (0 0 5px rgba($black, 0.5));
-          }
-
-          .transfers-type {
-            span {
-              position: relative;
-              padding-left: 2.2rem + 1rem;
-
-              &::before {
-                content: '';
-                position: absolute;
-                top: 0.2rem;
-                left: 0;
-                width: 2.2rem;
-                height: 2.2rem;
-                border-radius: 0.2rem;
-                border: 1px solid rgba($black, 0.5);
-              }
-            }
-          }
-        }
-
-        &:checked {
-          + label {
-            .transfers-type {
-              span {
-                &::before {
-                  background-size: contain;
-                  background-position: center;
-                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23312d2c'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .bordered-box--inner {
-        &.bordered-box--transfer {
-          border-radius: 0;
-          border-color: $colors-transparent;
-          justify-content: space-between;
-
-          &:before {
+          &::before {
             content: '';
             position: absolute;
-            left: 50%;
-            top: 50%;
             width: 2.4rem;
             height: 2.4rem;
-            border-radius: 50%;
-            background-color: $white;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-          }
-
-          .description {
-            font-size: 1.4rem;
-
-            @include media-breakpoint-between(md, lg) {
-              font-size: 1.2rem;
-            }
-          }
-
-          > * {
-            border-radius: 0.4rem;
-            background-color: $colors-secondary;
-
-            $mw: calc((100% - 1rem) / 2);
-
-            flex: 0 0 $mw;
-            max-width: $mw;
-
-            &.to {
-              border-left: none;
-
-              &:before {
-                content: none;
-              }
-            }
+            top: 50%;
+            left: 0;
+            transform: translate(calc(-100% - 0.5rem), -50%);
+            background-image: url('../../images/svg/right-arrow-bordered.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
           }
         }
       }
     }
   }
 
-  &-type {
-    position: relative;
-    border-radius: 0.4rem;
-    border: 1px solid rgba(#979797, 0.5);
-    padding: 1.25rem 1.5rem;
-    line-height: 1.47;
+  + * {
+    margin-top: 1.4rem;
+  }
 
-    span {
+  &--bordered {
+    @extend .transfers-block;
+    border-radius: 0.57rem;
+    border: 1px solid rgba($colors-greyish-brown, 0.5);
+    padding: 1.35 / 2 + rem;
+
+    &.br-12 {
+      border-radius: 1.2rem;
+      padding: 1rem;
+
+      > .transfers-block--bordered {
+        padding: 1rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+
+  &.transfers-list {
+    .transfers-block--bordered {
+      padding: 1rem;
+    }
+
+    .image {
+      border-radius: 0.4rem;
+    }
+  }
+
+  .title-block {
+    display: block;
+
+    + * {
+      margin-top: 1.4rem;
+    }
+
+    .title {
       font-family: $ff-Didot;
-      font-size: 1.2rem;
-      font-weight: 700;
-      display: block;
+      font-weight: bold;
+      font-size: 1.8rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 2rem !important;
+      }
 
       @include media-breakpoint-up(xl) {
+        font-size: 2rem;
+
+        &--inner {
+          font-size: 1.4rem !important;
+        }
+      }
+    }
+
+    .description {
+      font-size: 1.5rem;
+      margin-top: 1.4rem;
+    }
+  }
+}
+
+.select-transfer {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    position: relative;
+    min-height: 1px;
+    width: auto;
+    max-width: 100%;
+
+    + * {
+      margin-left: 0.68rem;
+    }
+  }
+
+  &-item {
+    input {
+      position: absolute;
+      max-width: 0;
+      max-height: 0;
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+
+      + label {
+        font-size: 1rem;
+        line-height: 1;
+        color: $colors-greyish-brown;
+        border-radius: 0.14rem;
+        border: 1px solid rgba($colors-greyish-brown, 0.5);
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+
+        @include media-breakpoint-up(md) {
+          font-size: 1.125rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+          font-size: 1.4rem;
+          line-height: 1.2;
+          padding-left: 0.4rem;
+          padding-right: 0.4rem;
+        }
+
+        &::before {
+          $width: 0.93rem;
+
+          content: '';
+          display: inline-block;
+          width: $width;
+          height: $width;
+          margin-right: 0.23rem;
+          vertical-align: -0.125rem;
+          background-image: url('../../images/svg/radio-circle.svg');
+          background-repeat: no-repeat;
+          background-size: $width $width;
+
+          @include media-breakpoint-up(md) {
+            $width: 1.4rem;
+
+            width: $width;
+            height: $width;
+            margin-right: $width / 2;
+            vertical-align: -$width * 0.2;
+            background-size: $width $width;
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          &::before {
+            background-image: url('../../images/svg/radio-check.svg');
+          }
+        }
+      }
+    }
+  }
+}
+
+.transfers-from-to {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../../images/svg/right-arrow-bg-white.svg');
+    width: 2.4rem;
+    height: 2.4rem;
+    @extend %bgContainCenteredImage;
+    z-index: 9;
+  }
+
+  $amount: 5px;
+
+  margin-left: -$amount;
+  margin-right: -$amount;
+
+  > * {
+    padding-left: $amount;
+    padding-right: $amount;
+  }
+
+  .from,
+  .to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $colors-secondary-100;
+    font-size: 1.4rem;
+    height: 5rem;
+    text-align: center;
+    border-radius: 0.4rem;
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 1.125rem;
+      height: 4rem;
+    }
+  }
+}
+
+.transfers-check {
+  position: relative;
+
+  input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    + label {
+      position: relative;
+      width: 100%;
+      padding: 1.5rem;
+      border: 1px solid rgba($colors-greyish-brown, 0.5);
+      border-radius: 0.4rem;
+      font-family: $ff-Didot;
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: $black;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.2rem;
+      }
+
+      @include media-breakpoint-up(md) {
         font-size: 1.8rem;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: -0.5rem;
+        margin-right: 1rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 0.2rem;
+        border: 1px solid rgba($black, 0.5);
+      }
+    }
+
+    &:checked {
+      + label {
+        &::before {
+          background-image: url('../../images/svg/check.svg');
+          @extend %noRepeatImage;
+          background-size: 90%;
+          background-position: center center;
+        }
       }
     }
   }

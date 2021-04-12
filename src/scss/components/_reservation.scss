@@ -37,13 +37,17 @@
 .reservation-summary {
   position: fixed;
   bottom: 0;
-  z-index: 999;
+  z-index: 1002;
   overflow-y: auto;
 
   @include media-breakpoint-down(lg) {
     left: 0;
     right: 0;
     box-shadow: 0 -1px 4px rgba(#575655, 0.5);
+
+    .reservation-summary-block {
+      max-width: 87.5vw;
+    }
   }
 
   @include media-breakpoint-between(md, lg) {
@@ -332,6 +336,7 @@
       font-family: $ff-TheanoDidot;
       font-size: 1.6rem;
       line-height: 2.44;
+      background-color: $colors-secondary-400;
 
       @include media-breakpoint-between(md, lg) {
         font-size: 1.4rem;

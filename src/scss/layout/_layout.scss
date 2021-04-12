@@ -57,11 +57,35 @@ body {
     background-position: 100% 74%;
   }
 
+  @include media-breakpoint-down(sm) {
+    [class*='row'] {
+      > .col-12 {
+        + *:not(.col-auto) {
+          margin-top: 1.2rem !important;
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-down(lg) {
     [class*='row'] {
       > [class*='col-12'] {
-        + [class*='col-12'] {
+        + [class*='col-12']:not([class*='col-md']) {
           margin-top: 1.2rem !important;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    [class*='row'] {
+      + [class*='row']:not(.row--inner) {
+        margin-top: 1.2rem;
+      }
+
+      > .col-12 {
+        + *:not([class*='col-md']):not(.col-auto):not([class*='col-xl']) {
+          margin-top: 1.2rem;
         }
       }
     }
@@ -92,7 +116,7 @@ body {
     }
   }
 
-  main {
+  main:not(.success-page) {
     padding-bottom: 10rem;
   }
 }
@@ -104,6 +128,24 @@ body {
 
 body {
   &.has-search {
+    @media (max-width: 374px) {
+      .container {
+        $amount: 8px;
+        padding-left: $amount;
+        padding-right: $amount;
+
+        .row {
+          margin-left: -$amount;
+          margin-right: -$amount;
+
+          > * {
+            padding-left: $amount;
+            padding-right: $amount;
+          }
+        }
+      }
+    }
+
     @include media-breakpoint-down(sm) {
       padding-bottom: 9.7rem;
     }
@@ -198,7 +240,7 @@ img {
 
 .bg {
   &--light-pink {
-    background-color: $colors-secondary !important;
+    background-color: $colors-secondary-100 !important;
   }
 }
 
