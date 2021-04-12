@@ -288,11 +288,11 @@ function setRadioListTabs() {
 }
 
 function isOwnHeaderSelectClicked(evt, selfObj) {
-  return selfObj != undefined
-    ? selfObj.contains(evt.target) ||
-        evt.target == selfObj ||
-        (selfObj.childNodes != undefined && $.inArray(evt.target, selfObj.childNodes) >= 0)
-    : false;
+  return (
+    selfObj.contains(evt.target) ||
+    evt.target == selfObj ||
+    (selfObj.childNodes != undefined && $.inArray(evt.target, selfObj.childNodes) >= 0)
+  );
 }
 
 function outsideClickClose(evt) {
@@ -326,7 +326,9 @@ window.onload = function () {
 
   if ($('body').hasClass('has-search')) {
     $('header').find('.btn.book-now').addClass('edit-button');
-    $('header').find('.btn.book-now').html('EDIT  <i class="icons icons--long-arrow"></i>'); //remove line on live!
+    $('header').find('.btn.book-now').html('EDIT SEARCH <i class="icons icons--long-arrow"></i>'); //remove line on live!
+  } else {
+    $('header').find('.book-now').attr('href', 'search-result.html');
   }
 
   $('.edit-button').on('click', function () {
@@ -355,7 +357,7 @@ window.onload = function () {
       });
   });
 
-  $(document).on('touchstart.header-select,click.header-select', outsideClickClose);
+  $(document).on('touchstart click.header-select', outsideClickClose);
 
   $('.header').each(function () {
     $('.is-active').each(function () {

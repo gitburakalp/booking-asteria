@@ -15139,8 +15139,13 @@ input {
 .reservation-summary {
   position: fixed;
   bottom: 0;
-  z-index: 1002;
+  z-index: 999;
   overflow-y: auto;
+}
+@media (max-width: 767.98px) {
+  .reservation-summary {
+    z-index: 1002;
+  }
 }
 @media (max-width: 1199.98px) {
   .reservation-summary {
